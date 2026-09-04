@@ -1,7 +1,328 @@
-header {
-    background-color: black;
-    color: white;
-    padding: 10px 0px;
-    font-size: 1.5rem;
-    text-align: center;
+/* ==================================================
+   BLACK CRISS — BRAND
+================================================== */
+
+:root {
+    --bc-yellow: #FBDC0C;
+    --bc-blue: #0F47AD;
+    --bc-green: #098830;
+
+    --bc-white: #FFFFFF;
+    --bc-black: #0D0D0F;
+    --bc-gray: #E0E1E3;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.site-header {
+    z-index: 1000;
+
+    background: linear-gradient(to bottom,
+            rgba(13, 13, 15, 0.45),
+            rgba(13, 13, 15, 0));
+}
+
+.header-inner {
+    height: 100px;
+}
+
+
+/* Logo
+-------------------------------------------------- */
+
+.header-brand {
+    line-height: 0;
+}
+
+.header-logo {
+    display: block;
+
+    width: 145px;
+    height: auto;
+}
+
+
+/* Menu trigger
+-------------------------------------------------- */
+
+.menu-trigger {
+    padding: 10px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+
+    background: rgba(13, 13, 15, 0.18);
+
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+
+    color: var(--bc-white);
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.menu-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.menu-icon {
+    width: 38px;
+    height: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.menu-icon span {
+    display: block;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--bc-white);
+    border-radius: 2px;
+
+    transition:
+        width 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* Menu trigger hover
+-------------------------------------------------- */
+
+.menu-trigger:hover {
+    color: var(--bc-yellow);
+
+    background: rgba(13, 13, 15, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.menu-trigger:hover .menu-icon span {
+    background-color: var(--bc-yellow);
+}
+
+.menu-trigger:hover .menu-icon span:first-child {
+    width: 70%;
+}
+
+
+/* ==================================================
+   OFFCANVAS MENU
+================================================== */
+
+.main-menu {
+    --bs-offcanvas-width: 100vw;
+
+    background:
+        radial-gradient(circle at 85% 20%,
+            rgba(15, 71, 173, 0.18),
+            transparent 30%),
+        var(--bc-black);
+
+    color: var(--bc-white);
+
+    border: 0;
+
+    overflow: hidden;
+}
+
+.main-menu .offcanvas-header {
+    height: 100px;
+}
+
+.main-menu .offcanvas-body {
+    padding-top: 0;
+    padding-bottom: 2rem;
+}
+
+
+/* Logo
+-------------------------------------------------- */
+
+.menu-logo {
+    display: block;
+
+    width: 145px;
+    height: auto;
+}
+
+
+/* Navigation
+-------------------------------------------------- */
+
+.menu-navigation {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.4rem;
+}
+
+.menu-navigation a {
+    width: fit-content;
+
+    color: var(--bc-white);
+
+    font-size: clamp(2.8rem, 6vw, 6rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.menu-navigation a:hover {
+    color: var(--bc-yellow);
+
+    transform: translateX(12px);
+}
+
+.menu-navigation:hover a:not(:hover) {
+    opacity: 0.35;
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero,
+.hero-container {
+    min-height: 100vh;
+}
+
+
+/* Background
+-------------------------------------------------- */
+
+.hero-bg {
+    z-index: 0;
+
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 65%,
+            rgba(255, 255, 255, 0.25)),
+        url("/images/hero/black-criss-bcith-tech-house-quibdo-choco.webp");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* CTA
+-------------------------------------------------- */
+
+.hero-cta-wrapper {
+    right: 6%;
+    bottom: 7%;
+
+    z-index: 10;
+}
+
+.hero-cta {
+    min-width: 320px;
+
+    background: rgba(13, 13, 15, 0.55);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    color: var(--bc-white);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.hero-cta:hover {
+    background-color: var(--bc-white);
+    border-color: var(--bc-white);
+
+    color: var(--bc-black);
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 767.98px) {
+
+    /* Header
+    -------------------------------------------------- */
+
+    .header-inner,
+    .main-menu .offcanvas-header {
+        height: 80px;
+    }
+
+    .header-logo,
+    .menu-logo {
+        width: 125px;
+    }
+
+    .menu-icon {
+        width: 30px;
+    }
+
+
+    /* Offcanvas
+    -------------------------------------------------- */
+
+    .menu-navigation a {
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+    }
+
+
+    /* Hero
+    -------------------------------------------------- */
+
+    .hero,
+    .hero-container {
+        min-height: 100svh;
+    }
+
+    .hero-bg {
+        background-position: 55% center;
+    }
+
+    .hero-cta-wrapper {
+        left: 50%;
+        right: auto;
+        bottom: 4%;
+
+        width: 85%;
+
+        transform: translateX(-50%);
+    }
+
+    .hero-cta {
+        width: 100%;
+        min-width: 0;
+    }
+
 }

@@ -1,1 +1,72 @@
-<header>Black Criss</header>
+<header class="site-header position-absolute top-0 start-0 w-100">
+    <div class="container-fluid px-4 px-lg-5">
+        <div
+            class="header-inner d-flex align-items-center justify-content-between"
+        >
+            <a href="/" class="header-brand" aria-label="Black Criss - Inicio">
+                <img
+                    src="/images/branding/black-criss-tech-house-header-logo-white.svg"
+                    alt="Black Criss"
+                    class="header-logo"
+                />
+            </a>
+
+            <button
+                class="menu-trigger d-flex align-items-center gap-3"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mainMenu"
+                aria-controls="mainMenu"
+                aria-label="Abrir menú"
+            >
+                <span class="menu-label d-none d-sm-inline"> MENU </span>
+
+                <span class="menu-icon" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div
+    class="offcanvas offcanvas-end main-menu"
+    tabindex="-1"
+    id="mainMenu"
+    aria-label="Menú principal"
+>
+    <div class="offcanvas-header px-4 px-lg-5">
+        <a
+            href="/"
+            aria-label="Black Criss - Inicio"
+            data-bs-dismiss="offcanvas"
+        >
+            <img
+                src="/images/branding/black-criss-tech-house-header-logo-white.svg"
+                alt="Black Criss"
+                class="menu-logo"
+            />
+        </a>
+
+        <button
+            type="button"
+            class="btn-close btn-close-white shadow-none"
+            data-bs-dismiss="offcanvas"
+            aria-label="Cerrar menú"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex align-items-center px-4 px-lg-5">
+        <nav class="menu-navigation" aria-label="Navegación principal">
+            <a href="#music" data-bs-dismiss="offcanvas"> Música </a>
+
+            <a href="#about" data-bs-dismiss="offcanvas"> Black Criss </a>
+
+            <a href="#shows" data-bs-dismiss="offcanvas"> Shows </a>
+
+            <a href="#videos" data-bs-dismiss="offcanvas"> Videos </a>
+
+            <a href="#contact" data-bs-dismiss="offcanvas"> Contacto </a>
+        </nav>
+    </div>
+</div>
