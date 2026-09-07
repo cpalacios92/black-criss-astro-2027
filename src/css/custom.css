@@ -220,7 +220,7 @@
         linear-gradient(to bottom,
             rgba(0, 0, 0, 0) 65%,
             rgba(255, 255, 255, 0.25)),
-        url("/images/hero/black-criss-bcith-tech-house-quibdo-choco.webp");
+        url("/images/hero/black-criss-bcith-tech-house-quibdo-choco-1.webp");
 
     background-size: cover;
     background-position: center;
@@ -265,6 +265,256 @@
     color: var(--bc-black);
 }
 
+/* ==================================================
+   BRAND SLIDER
+================================================== */
+
+.brand-slider {
+    background-color: var(--bc-black);
+}
+
+.brand-slide {
+    position: relative;
+
+    height: min(850px, 85vh);
+    min-height: 650px;
+
+    overflow: hidden;
+}
+
+.brand-slide-bg {
+    position: absolute;
+
+    inset: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.brand-slide-overlay {
+    position: absolute;
+
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(to right,
+            rgba(13, 13, 15, 0.65),
+            rgba(13, 13, 15, 0.08));
+}
+
+.brand-slide-container {
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+}
+
+
+/* Logo
+-------------------------------------------------- */
+
+.brand-slide-logo {
+    width: clamp(160px, 18vw, 280px);
+    height: auto;
+}
+
+
+/* Buttons
+-------------------------------------------------- */
+
+.brand-slide-actions {
+    display: flex;
+
+    gap: 1rem;
+}
+
+.brand-slider-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-width: 180px;
+
+    gap: 2rem;
+
+    padding: 0.9rem 1.4rem;
+
+    border-radius: 50px;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.brand-slider-btn:hover {
+    transform: translateY(-3px);
+}
+
+.brand-slider-btn-primary {
+    background-color: var(--bc-white);
+    border: 1px solid var(--bc-white);
+
+    color: var(--bc-black);
+}
+
+.brand-slider-btn-primary:hover {
+    background-color: var(--bc-yellow);
+    border-color: var(--bc-yellow);
+
+    color: var(--bc-black);
+}
+
+.brand-slider-btn-outline {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    color: var(--bc-white);
+}
+
+.brand-slider-btn-outline:hover {
+    background-color: var(--bc-white);
+    border-color: var(--bc-white);
+
+    color: var(--bc-black);
+}
+
+
+/* ==================================================
+   SLIDE — MUSIC
+================================================== */
+
+.brand-music-content {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: 2rem;
+
+    text-align: right;
+}
+
+
+/* ==================================================
+   SLIDE — IMPACT
+================================================== */
+
+.brand-slide-impact .brand-slide-overlay {
+    background: linear-gradient(to top,
+            rgba(13, 13, 15, 0.9),
+            rgba(13, 13, 15, 0.05) 65%);
+}
+
+.brand-impact-content {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-bottom: 8rem;
+
+    text-align: center;
+
+    color: var(--bc-white);
+}
+
+.brand-slide-eyebrow {
+    margin-bottom: 1rem;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.brand-impact-title {
+    max-width: 850px;
+
+    margin-bottom: 2rem;
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 400;
+
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+}
+
+
+/* ==================================================
+   SLIDE — STORE
+================================================== */
+
+.brand-slide-store .brand-slide-overlay {
+    background: linear-gradient(to left,
+            rgba(13, 13, 15, 0.8),
+            rgba(13, 13, 15, 0.05) 60%);
+}
+
+.brand-store-content {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.brand-store-copy {
+    width: min(450px, 40%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 1.5rem;
+
+    color: var(--bc-white);
+}
+
+.brand-store-copy p {
+    max-width: 400px;
+
+    margin: 0;
+
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   SLIDER CONTROLS
+================================================== */
+
+.brand-slider-control {
+    width: 6%;
+    z-index: 5;
+}
+
+.brand-slider-indicators {
+    margin-bottom: 2rem;
+    z-index: 5;
+}
+
+.brand-slider-indicators [data-bs-target] {
+    width: 40px;
+    height: 2px;
+
+    border: 0;
+
+    background-color: var(--bc-white);
+}
 
 /* ==================================================
    RESPONSIVE
@@ -323,6 +573,58 @@
     .hero-cta {
         width: 100%;
         min-width: 0;
+    }
+
+    /* Brand slider
+-------------------------------------------------- */
+
+    .brand-slide {
+        height: 80svh;
+        min-height: 600px;
+    }
+
+    .brand-slide-overlay {
+        background: linear-gradient(to top,
+                rgba(13, 13, 15, 0.85),
+                rgba(13, 13, 15, 0.05) 70%);
+    }
+
+    .brand-music-content {
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        padding-bottom: 6rem;
+
+        text-align: left;
+    }
+
+    .brand-slide-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .brand-slider-btn {
+        width: 100%;
+    }
+
+    .brand-impact-content {
+        padding-bottom: 7rem;
+    }
+
+    .brand-store-content {
+        align-items: flex-end;
+        justify-content: flex-start;
+
+        padding-bottom: 6rem;
+    }
+
+    .brand-store-copy {
+        width: 100%;
+    }
+
+    .brand-slider-control {
+        display: none;
     }
 
 }
