@@ -33,7 +33,7 @@
 }
 
 
-/* Logo
+/* Header logo
 -------------------------------------------------- */
 
 .header-brand {
@@ -95,10 +95,6 @@
         background-color 0.3s ease;
 }
 
-
-/* Menu trigger hover
--------------------------------------------------- */
-
 .menu-trigger:hover {
     color: var(--bc-yellow);
 }
@@ -133,7 +129,7 @@
 }
 
 .main-menu .offcanvas-header {
-    height: 100px;
+    height: 90px;
 }
 
 .main-menu .offcanvas-body {
@@ -142,7 +138,7 @@
 }
 
 
-/* Logo
+/* Offcanvas logo
 -------------------------------------------------- */
 
 .menu-logo {
@@ -193,51 +189,12 @@
 
 
 /* ==================================================
-   SLIDE — HERO
-================================================== */
-
-.brand-slide-hero .brand-slide-overlay {
-    background: linear-gradient(to bottom,
-            rgba(13, 13, 15, 0.15),
-            rgba(13, 13, 15, 0.05) 60%,
-            rgba(13, 13, 15, 0.35));
-}
-
-.brand-hero-content {
-    height: 100%;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-
-    padding-bottom: 7%;
-}
-
-.brand-slider-btn-glass {
-    min-width: 320px;
-
-    background: rgba(13, 13, 15, 0.55);
-
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255, 255, 255, 0.35);
-
-    color: var(--bc-white);
-}
-
-.brand-slider-btn-glass:hover {
-    background-color: var(--bc-white);
-    border-color: var(--bc-white);
-
-    color: var(--bc-black);
-}
-
-/* ==================================================
-   BRAND SLIDER
+   BRAND SLIDER — BASE
 ================================================== */
 
 .brand-slider {
+    position: relative;
+
     background-color: var(--bc-black);
 }
 
@@ -250,10 +207,15 @@
     overflow: hidden;
 }
 
+
+/* Background
+-------------------------------------------------- */
+
 .brand-slide-bg {
     position: absolute;
 
     inset: 0;
+
     z-index: 0;
 
     width: 100%;
@@ -262,16 +224,27 @@
     object-fit: cover;
 }
 
+
+/* Overlay
+-------------------------------------------------- */
+
 .brand-slide-overlay {
     position: absolute;
 
     inset: 0;
+
     z-index: 1;
 
     background: linear-gradient(to right,
             rgba(13, 13, 15, 0.65),
             rgba(13, 13, 15, 0.08));
+
+    pointer-events: none;
 }
+
+
+/* Content
+-------------------------------------------------- */
 
 .brand-slide-container {
     position: relative;
@@ -282,7 +255,7 @@
 }
 
 
-/* Logo
+/* Slider logo
 -------------------------------------------------- */
 
 .brand-slide-logo {
@@ -291,8 +264,9 @@
 }
 
 
-/* Buttons
--------------------------------------------------- */
+/* ==================================================
+   BRAND SLIDER — BUTTONS
+================================================== */
 
 .brand-slide-actions {
     display: flex;
@@ -301,11 +275,11 @@
 }
 
 .brand-slider-btn {
+    min-width: 180px;
+
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-
-    min-width: 180px;
 
     gap: 2rem;
 
@@ -328,6 +302,10 @@
     transform: translateY(-3px);
 }
 
+
+/* Primary
+-------------------------------------------------- */
+
 .brand-slider-btn-primary {
     background-color: var(--bc-white);
     border: 1px solid var(--bc-white);
@@ -342,8 +320,13 @@
     color: var(--bc-black);
 }
 
+
+/* Outline
+-------------------------------------------------- */
+
 .brand-slider-btn-outline {
     background-color: transparent;
+
     border: 1px solid rgba(255, 255, 255, 0.6);
 
     color: var(--bc-white);
@@ -357,8 +340,54 @@
 }
 
 
+/* Glass
+-------------------------------------------------- */
+
+.brand-slider-btn-glass {
+    min-width: 320px;
+
+    background: rgba(13, 13, 15, 0.55);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    color: var(--bc-white);
+}
+
+.brand-slider-btn-glass:hover {
+    background-color: var(--bc-white);
+    border-color: var(--bc-white);
+
+    color: var(--bc-black);
+}
+
+
 /* ==================================================
-   SLIDE — MUSIC
+   SLIDE 01 — HERO
+================================================== */
+
+.brand-slide-hero .brand-slide-overlay {
+    background: linear-gradient(to bottom,
+            rgba(13, 13, 15, 0.15),
+            rgba(13, 13, 15, 0.05) 60%,
+            rgba(13, 13, 15, 0.35));
+}
+
+.brand-hero-content {
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    padding-bottom: 7%;
+}
+
+
+/* ==================================================
+   SLIDE 02 — MUSIC
 ================================================== */
 
 .brand-music-content {
@@ -376,7 +405,7 @@
 
 
 /* ==================================================
-   SLIDE — IMPACT
+   SLIDE 03 — IMPACT
 ================================================== */
 
 .brand-slide-impact .brand-slide-overlay {
@@ -415,14 +444,13 @@
 
     font-size: clamp(2.5rem, 5vw, 5rem);
     font-weight: 400;
-
     line-height: 0.95;
     letter-spacing: -0.03em;
 }
 
 
 /* ==================================================
-   SLIDE — STORE
+   SLIDE 04 — STORE
 ================================================== */
 
 .brand-slide-store .brand-slide-overlay {
@@ -467,11 +495,13 @@
 
 .brand-slider-control {
     width: 6%;
+
     z-index: 5;
 }
 
 .brand-slider-indicators {
     margin-bottom: 2rem;
+
     z-index: 5;
 }
 
@@ -484,8 +514,176 @@
     background-color: var(--bc-white);
 }
 
+
 /* ==================================================
-   RESPONSIVE
+   EXPLORE SECTIONS
+================================================== */
+
+.explore-sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    background-color: var(--bc-black);
+}
+
+.explore-card {
+    min-height: 560px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* Card colors
+-------------------------------------------------- */
+
+.explore-card-music {
+    background-color: #111b00;
+}
+
+.explore-card-merch {
+    background-color: #384033;
+}
+
+.explore-card-studio {
+    background-color: #242424;
+}
+
+
+/* Visual
+-------------------------------------------------- */
+
+.explore-card-visual {
+    height: 390px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3rem 3rem 1rem;
+}
+
+.explore-card-image {
+    width: auto;
+    height: auto;
+
+    max-width: 68%;
+    max-height: 260px;
+
+    object-fit: contain;
+
+    transition: transform 0.5s ease;
+}
+
+.explore-card:hover .explore-card-image {
+    transform: scale(1.04);
+}
+
+
+/* Individual image sizing
+-------------------------------------------------- */
+
+.explore-card-music .explore-card-image {
+    max-width: 62%;
+}
+
+.explore-card-merch .explore-card-image {
+    max-width: 75%;
+    max-height: 320px;
+}
+
+.explore-card-studio .explore-card-image {
+    max-width: 78%;
+    max-height: 320px;
+}
+
+
+/* Content
+-------------------------------------------------- */
+
+.explore-card-content {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.5rem 4rem 2.5rem;
+
+    color: var(--bc-white);
+}
+
+.explore-card-title {
+    margin-bottom: 1.5rem;
+
+    font-size: clamp(2rem, 2.4vw, 3rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+
+/* Button
+-------------------------------------------------- */
+
+.explore-card-btn {
+    width: 100%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.9rem 1.4rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: var(--bc-white);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.explore-card-btn:hover {
+    background-color: var(--bc-white);
+    border-color: var(--bc-white);
+
+    color: var(--bc-black);
+}
+
+
+/* ==================================================
+   RESPONSIVE — TABLET
+================================================== */
+
+@media (max-width: 991.98px) {
+
+    .explore-card-visual {
+        height: 340px;
+
+        padding: 2.5rem 2rem 1rem;
+    }
+
+    .explore-card-image {
+        max-width: 78%;
+        max-height: 270px;
+    }
+
+    .explore-card-content {
+        padding: 1rem 2rem 2.5rem;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVE — MOBILE
 ================================================== */
 
 @media (max-width: 767.98px) {
@@ -515,8 +713,9 @@
         font-size: clamp(2.8rem, 13vw, 4.5rem);
     }
 
-    /* Brand slider
--------------------------------------------------- */
+
+    /* Slider
+    -------------------------------------------------- */
 
     .brand-slide {
         height: 100svh;
@@ -528,6 +727,26 @@
                 rgba(13, 13, 15, 0.85),
                 rgba(13, 13, 15, 0.05) 70%);
     }
+
+
+    /* Hero
+    -------------------------------------------------- */
+
+    .brand-hero-content {
+        align-items: flex-end;
+        justify-content: center;
+
+        padding-bottom: 6rem;
+    }
+
+    .brand-slider-btn-glass {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* Music slide
+    -------------------------------------------------- */
 
     .brand-music-content {
         justify-content: flex-end;
@@ -544,13 +763,17 @@
         flex-direction: column;
     }
 
-    .brand-slider-btn {
-        width: 100%;
-    }
+
+    /* Impact slide
+    -------------------------------------------------- */
 
     .brand-impact-content {
         padding-bottom: 7rem;
     }
+
+
+    /* Store slide
+    -------------------------------------------------- */
 
     .brand-store-content {
         align-items: flex-end;
@@ -563,27 +786,75 @@
         width: 100%;
     }
 
+
+    /* Slider buttons
+    -------------------------------------------------- */
+
+    .brand-slider-btn {
+        width: 100%;
+    }
+
+
+    /* Slider controls
+    -------------------------------------------------- */
+
     .brand-slider-control {
         display: none;
     }
 
-    .brand-hero-content {
-        align-items: flex-end;
-        justify-content: center;
-
-        padding-bottom: 6rem;
-    }
-
-    .brand-slider-btn-glass {
-        width: 100%;
-        min-width: 0;
-    }
 
     /* Hide slide logos
--------------------------------------------------- */
+    -------------------------------------------------- */
 
     .brand-slide-music .brand-slide-logo,
     .brand-slide-store .brand-slide-logo {
         display: none;
     }
+
+
+    /* Explore
+    -------------------------------------------------- */
+
+    .explore-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .explore-card {
+        min-height: auto;
+    }
+
+    .explore-card-visual {
+        height: 330px;
+
+        padding: 2.5rem 1.5rem 0.5rem;
+    }
+
+    .explore-card-image {
+        max-width: 70%;
+        max-height: 260px;
+    }
+
+    .explore-card-music .explore-card-image {
+        max-width: 58%;
+    }
+
+    .explore-card-merch .explore-card-image {
+        max-width: 72%;
+    }
+
+    .explore-card-studio .explore-card-image {
+        max-width: 78%;
+    }
+
+    .explore-card-content {
+        padding: 0.5rem 1.5rem 2.5rem;
+    }
+
+    .explore-card-title {
+        margin-bottom: 1.5rem;
+
+        font-size: clamp(2.2rem, 10vw, 3rem);
+    }
 }
+
+s
