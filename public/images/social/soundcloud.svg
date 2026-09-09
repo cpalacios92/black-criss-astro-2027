@@ -1,0 +1,8 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+	<defs>
+		<image width="96" height="96" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAADS0lEQVR4nO3bzWtcZRQG8De2trUIGlBKIU3mnDvtIlAXDbgIQgq6CCiG0r7njAk2KBJKl0Wsi4B/QOm2uhDaTTd14VaoUhARRG0DbREXCgoaEaPxA+pHk6fMmI8hH3NnJnc+cvP84GzmzUDe55m5w9y5NwQiIiIiIiIiIiIiIiIiIiIiIiIiIqIuhcmBffBkGC7nYHoVJh/B5CZcv4XJN3D5AiYfwvQSoryKWBzs9P+cC7DkGFzehsnvcEVjI7fheh5jA493eh/bDjw5BNdrjYe+4czB9A1MDT3c6X1tCzA5CZc/Mwq/ej6DF5NO76+rwQuvw3WxBeH/P6a/IsrTnd5nV0L5w7OV4a9+NvyR2xKWjt3PwpLTcH1z5XGT1xD1GbxwcP+GzyvJUzC91/rwV94JP2Ki2BfyAqYXYHJn7UbD8vrqq+9vuF6HF15G7HtkdV0+bVv4KyXIDbwVHgp5sNkmQ+31+bTnt3yingk7uACkrbflUFT1TtwW4MlUbgrwyqHobNguEAsG04VcFeD6HUZGdoduh9gvy6cEclYAYPJc6HZw/WBtcLkpwOWd0M3gyfGNgstPATobuhlc3s95AcD4YQ3dCib/5r6AqJOV0yGm78H0K7j8AtOf4PIJTKfL3/LbmXnNgHNZgOlC7fXyi1CuIBafzD5gk+8rJ6lMf4DL3R1ZgNc78jNKyWjzYYfQs9WAd3YBWi7hH5TkVOPhx7ALpu+yAM2ihP8Qk6HGCjC5nEXALECXZwZxcE994XsyllXALEBXx/SV9PDj4J7KmT8WgBYU8HF6ASU9kWXALECr5z7i4KO1C1hziQcL0Gwn7TfmpYuUWIC3aEr6fEoBOs8CtIUFFF5kAd7JSYbTCphhAdq6KcmBur6AsQDNfky/rhl+Mz+osABtpIDp9AJC6IHLlyxAs545vHTkidQCKpuMenTpyjQW4JnMIkwm6gq/qoTJ8jc3FqBbD7/q2tfGSnCJLEC3MrPl66OaCn/zUlgA6rm3wPQioj6WafiVAEw+h+lfLECr5ze43qrc+Fe+a2e0uDfz4NcFOVrci/H+3nWPj/f3Vk/aOtb8XbPrHZtN7mMgIiIiIiIiIiIiIiIiIiIiIiIiIiKi0F4PANqJShAhBojFAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<use id="icons8-soundcloud-96" href="#img1" transform="matrix(1,0,0,1,0,0)"/>
+</svg>
