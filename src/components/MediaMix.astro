@@ -1,0 +1,98 @@
+<section class="media-mix-section">
+    <div class="container-fluid px-4 px-lg-5">
+        <!-- Header -->
+        <div class="media-mix-header">
+            <span>BLACK CRISS</span>
+            <h2>MEDIA</h2>
+        </div>
+
+        <!-- Filters -->
+        <div class="media-mix-filters" aria-label="Filtrar contenido">
+            <button type="button" class="media-filter active" data-filter="all">
+                TODO
+            </button>
+
+            <button type="button" class="media-filter" data-filter="image">
+                FOTOS
+            </button>
+
+            <button type="button" class="media-filter" data-filter="video">
+                VIDEOS
+            </button>
+        </div>
+
+        <!-- Media grid -->
+        <div class="media-mix-grid">
+            <!-- IMAGE 01 -->
+            <figure class="media-mix-item media-item-large" data-media="image">
+                <img src="/images/media/photo-01.webp" alt="Black Criss" />
+            </figure>
+
+            <!-- IMAGE 02 -->
+            <figure class="media-mix-item media-item-medium" data-media="image">
+                <img src="/images/media/photo-02.webp" alt="Black Criss" />
+            </figure>
+
+            <!-- VIDEO 01 -->
+            <div class="media-mix-item media-item-tall" data-media="video">
+                <div class="media-video">
+                    <iframe
+                        src="https://www.youtube.com/embed/gtX1b1-Oyok?si=37prilj6n83ysDEn"
+                        title="Black Criss"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- IMAGE 03 -->
+            <figure class="media-mix-item media-item-small" data-media="image">
+                <img src="/images/media/photo-03.webp" alt="Black Criss" />
+            </figure>
+
+            <!-- VIDEO 02 -->
+            <div class="media-mix-item media-item-medium" data-media="video">
+                <div class="media-video">
+                    <iframe
+                        src="https://www.youtube.com/embed/v_4A1CukVqA?si=ummNOpF15_8BfFjq"
+                        title="Black Criss"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- IMAGE 04 -->
+            <figure class="media-mix-item media-item-medium" data-media="image">
+                <img src="/images/media/photo-04.webp" alt="Black Criss" />
+            </figure>
+        </div>
+    </div>
+</section>
+
+<script>
+    const filters = document.querySelectorAll(".media-filter");
+    const items = document.querySelectorAll(".media-mix-item");
+
+    filters.forEach((button) => {
+        button.addEventListener("click", () => {
+            const filter = button.getAttribute("data-filter");
+
+            filters.forEach((item) => {
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            items.forEach((item) => {
+                const type = item.getAttribute("data-media");
+
+                if (filter === "all" || type === filter) {
+                    item.classList.remove("is-hidden");
+                } else {
+                    item.classList.add("is-hidden");
+                }
+            });
+        });
+    });
+</script>

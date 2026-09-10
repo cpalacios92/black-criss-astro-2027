@@ -1528,6 +1528,206 @@
     letter-spacing: 0.04em;
 }
 
+/* ==================================================
+   MEDIA MIX
+================================================== */
+
+.media-mix-section {
+    padding: 6rem 0;
+
+    background-color: var(--bc-black);
+
+    color: var(--bc-white);
+}
+
+
+/* Header
+-------------------------------------------------- */
+
+.media-mix-header {
+    margin-bottom: 2.5rem;
+
+    text-align: center;
+}
+
+.media-mix-header span {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    color: var(--bc-yellow);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.media-mix-header h2 {
+    margin: 0;
+
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+
+/* ==================================================
+   FILTERS
+================================================== */
+
+.media-mix-filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2.5rem;
+
+    margin-bottom: 3.5rem;
+}
+
+.media-filter {
+    position: relative;
+
+    padding: 0 0 0.5rem;
+
+    border: 0;
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+.media-filter:hover,
+.media-filter.active {
+    color: var(--bc-white);
+}
+
+.media-filter::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--bc-yellow);
+
+    transition: width 0.3s ease;
+}
+
+.media-filter.active::after {
+    width: 100%;
+}
+
+
+/* ==================================================
+   MEDIA GRID
+================================================== */
+
+.media-mix-grid {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: dense;
+
+    gap: 16px;
+}
+
+
+/* Media item
+-------------------------------------------------- */
+
+.media-mix-item {
+    margin: 0;
+
+    overflow: hidden;
+
+    background-color: #111;
+
+    opacity: 1;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.4s ease;
+}
+
+.media-mix-item.is-hidden {
+    display: none;
+}
+
+
+/* Images
+-------------------------------------------------- */
+
+.media-mix-item img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.media-mix-item:hover img {
+    transform: scale(1.03);
+}
+
+
+/* Sizes
+-------------------------------------------------- */
+
+.media-item-large {
+    min-height: 650px;
+}
+
+.media-item-tall {
+    min-height: 650px;
+}
+
+.media-item-medium {
+    min-height: 360px;
+}
+
+.media-item-small {
+    min-height: 280px;
+}
+
+
+/* ==================================================
+   VIDEO
+================================================== */
+
+.media-video {
+    width: 100%;
+    height: 100%;
+}
+
+.media-video iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+
+    border: 0;
+}
+
 
 /* ==================================================
    RESPONSIVE — GALLERY
@@ -1952,5 +2152,37 @@
 
     .video-card-content {
         padding: 1rem;
+    }
+
+    .media-mix-section {
+        padding: 4.5rem 0;
+    }
+
+    .media-mix-header {
+        text-align: left;
+    }
+
+    .media-mix-filters {
+        justify-content: flex-start;
+
+        gap: 1.7rem;
+
+        margin-bottom: 2.5rem;
+    }
+
+    .media-mix-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .media-item-large,
+    .media-item-tall {
+        min-height: 500px;
+    }
+
+    .media-item-medium,
+    .media-item-small {
+        min-height: 300px;
     }
 }
