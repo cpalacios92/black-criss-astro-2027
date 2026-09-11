@@ -1,5 +1,5 @@
 <header class="site-header position-absolute top-0 start-0 w-100">
-    <div class="container-fluid px-4 px-lg-5">
+    <div class="container-fluid header-container">
         <div
             class="header-inner d-flex align-items-center justify-content-between"
         >
@@ -12,22 +12,32 @@
                 />
             </a>
 
-            <!-- Menu Trigger -->
-            <button
-                class="menu-trigger d-flex align-items-center gap-3"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#mainMenu"
-                aria-controls="mainMenu"
-                aria-label="Abrir menú"
-            >
-                <span class="menu-label d-none d-sm-inline"> MENU </span>
+            <!-- Actions -->
+            <div class="header-actions d-flex align-items-center">
+                <a
+                    href="https://open.spotify.com/artist/2d3g8OYlYBUdrR35hcxgbK"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn header-listen-btn"
+                >
+                    ESCUCHAR AHORA
+                </a>
 
-                <span class="menu-icon" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                </span>
-            </button>
+                <button
+                    class="menu-trigger d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#mainMenu"
+                    aria-controls="mainMenu"
+                    aria-label="Abrir menú"
+                >
+                    <span class="menu-icon" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
         </div>
     </div>
 </header>
@@ -42,8 +52,7 @@
     id="mainMenu"
     aria-label="Menú principal"
 >
-    <!-- Header -->
-    <div class="offcanvas-header px-4 px-lg-5">
+    <div class="offcanvas-header header-container">
         <a
             href="/"
             aria-label="Black Criss - Inicio"
@@ -63,19 +72,14 @@
             aria-label="Cerrar menú"></button>
     </div>
 
-    <!-- Navigation -->
-    <div class="offcanvas-body d-flex align-items-center px-4 px-lg-5">
+    <div class="offcanvas-body header-container d-flex align-items-center">
         <nav class="menu-navigation" aria-label="Navegación principal">
-            <!-- Black Criss -->
             <a href="#about" data-bs-dismiss="offcanvas"> Black Criss </a>
 
-            <!-- Música -->
             <a href="#music" data-bs-dismiss="offcanvas"> Música </a>
 
-            <!-- Store -->
             <a href="/store" data-bs-dismiss="offcanvas"> Store </a>
 
-            <!-- In Studio -->
             <a
                 href="https://instudio.blackcriss.com/"
                 target="_blank"
@@ -84,10 +88,8 @@
                 In Studio
             </a>
 
-            <!-- Impact -->
             <a href="#impact" data-bs-dismiss="offcanvas"> Impact </a>
 
-            <!-- Contacto -->
             <a href="#contact" data-bs-dismiss="offcanvas"> Contacto </a>
         </nav>
     </div>
