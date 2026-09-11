@@ -3,6 +3,7 @@
         <div
             class="header-inner d-flex align-items-center justify-content-between"
         >
+            <!-- Logo -->
             <a href="/" class="header-brand" aria-label="Black Criss - Inicio">
                 <img
                     src="/images/branding/black-criss-tech-house-header-logo-white.svg"
@@ -11,6 +12,7 @@
                 />
             </a>
 
+            <!-- Menu Trigger -->
             <button
                 class="menu-trigger d-flex align-items-center gap-3"
                 type="button"
@@ -30,12 +32,17 @@
     </div>
 </header>
 
+<!-- ==================================================
+     OFFCANVAS MENU
+================================================== -->
+
 <div
     class="offcanvas offcanvas-end main-menu"
     tabindex="-1"
     id="mainMenu"
     aria-label="Menú principal"
 >
+    <!-- Header -->
     <div class="offcanvas-header px-4 px-lg-5">
         <a
             href="/"
@@ -56,23 +63,31 @@
             aria-label="Cerrar menú"></button>
     </div>
 
+    <!-- Navigation -->
     <div class="offcanvas-body d-flex align-items-center px-4 px-lg-5">
         <nav class="menu-navigation" aria-label="Navegación principal">
-            <a href="#music" data-bs-dismiss="offcanvas"> Black Criss </a>
+            <!-- Black Criss -->
+            <a href="#about" data-bs-dismiss="offcanvas"> Black Criss </a>
 
-            <a href="#about" data-bs-dismiss="offcanvas"> Música </a>
+            <!-- Música -->
+            <a href="#music" data-bs-dismiss="offcanvas"> Música </a>
 
-            <a href="#shows" data-bs-dismiss="offcanvas"> Store </a>
+            <!-- Store -->
+            <a href="/store" data-bs-dismiss="offcanvas"> Store </a>
 
+            <!-- In Studio -->
             <a
                 href="https://instudio.blackcriss.com/"
-                data-bs-dismiss="offcanvas"
+                target="_blank"
+                rel="noopener noreferrer"
             >
                 In Studio
             </a>
 
-            <a href="#videos" data-bs-dismiss="offcanvas"> Impact </a>
+            <!-- Impact -->
+            <a href="#impact" data-bs-dismiss="offcanvas"> Impact </a>
 
+            <!-- Contacto -->
             <a href="#contact" data-bs-dismiss="offcanvas"> Contacto </a>
         </nav>
     </div>
