@@ -1,0 +1,48 @@
+<button
+    id="backToTop"
+    class="back-to-top"
+    type="button"
+    aria-label="Volver al inicio"
+>
+    <span aria-hidden="true">↑</span>
+</button>
+
+<script>
+    const backToTop = document.getElementById("backToTop");
+    const mainMenu = document.getElementById("mainMenu");
+
+    if (backToTop) {
+        const updateButton = () => {
+            const menuIsOpen = mainMenu?.classList.contains("show");
+            const hasScrolled = window.scrollY > 300;
+
+            backToTop.classList.toggle(
+                "is-visible",
+                hasScrolled && !menuIsOpen,
+            );
+        };
+
+        window.addEventListener("scroll", updateButton, {
+            passive: true,
+        });
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+
+        if (mainMenu) {
+            mainMenu.addEventListener("show.bs.offcanvas", () => {
+                backToTop.classList.remove("is-visible");
+            });
+
+            mainMenu.addEventListener("hidden.bs.offcanvas", () => {
+                updateButton();
+            });
+        }
+
+        updateButton();
+    }
+</script>
