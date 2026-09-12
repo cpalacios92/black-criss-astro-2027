@@ -1401,17 +1401,30 @@ h3 {
 ================================================== */
 
 .gallery-grid-section {
-    padding: 5rem 0;
 
     background-color: var(--bc-black);
+
+    width: 100%;
+
+    padding: 4rem 0;
+
+    overflow: hidden;
+}
+
+.gallery-grid-section .container-fluid {
+    width: 100%;
+    max-width: 1600px;
+
+    margin-inline: auto;
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(3, 180px);
+    width: 100%;
+    max-width: 1480px;
 
-    gap: 10px;
+    margin-inline: auto;
+
+    display: grid;
 }
 
 .gallery-item {
@@ -1923,6 +1936,116 @@ h3 {
     color: var(--bc-black);
 }
 
+/* ==================================================
+   ARTIST STORY
+================================================== */
+
+.artist-story {
+    padding: 9rem 0 7rem;
+
+    background-color: var(--bc-black);
+
+    color: var(--bc-white);
+}
+
+
+/* Intro
+-------------------------------------------------- */
+
+.artist-story-intro {
+    max-width: 1000px;
+
+    margin-bottom: 7rem;
+}
+
+.artist-story-eyebrow {
+    display: block;
+
+    margin-bottom: 1.2rem;
+
+    color: var(--bc-yellow);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.artist-story-intro h1 {
+    margin: 0 0 2.5rem;
+
+    font-size: clamp(4rem, 9vw, 9rem);
+    font-weight: 600;
+    line-height: 0.82;
+    letter-spacing: -0.05em;
+}
+
+.artist-story-intro p {
+    max-width: 720px;
+
+    margin: 0 0 1.2rem;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   TIMELINE
+================================================== */
+
+.artist-timeline {
+    max-width: 1100px;
+
+    margin-left: auto;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+
+    gap: 2rem;
+
+    padding: 2.5rem 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.timeline-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.timeline-item>span {
+    color: var(--bc-yellow);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.timeline-item h2 {
+    margin: 0 0 0.8rem;
+
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.timeline-item p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
 
 /* ==================================================
    RESPONSIVE — GALLERY
@@ -2423,5 +2546,25 @@ h3 {
     .back-to-top {
         width: 42px;
         height: 42px;
+    }
+
+    .artist-story {
+        padding: 7rem 0 4.5rem;
+    }
+
+    .artist-story-intro {
+        margin-bottom: 4rem;
+    }
+
+    .artist-story-intro h1 {
+        font-size: clamp(3.5rem, 18vw, 6rem);
+    }
+
+    .timeline-item {
+        grid-template-columns: 40px 1fr;
+
+        gap: 1rem;
+
+        padding: 2rem 0;
     }
 }
