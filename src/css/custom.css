@@ -1991,6 +1991,73 @@ h3 {
     line-height: 1.7;
 }
 
+/* ==================================================
+   ARTIST BOOKING CTA
+================================================== */
+
+.artist-booking {
+    padding: 5rem 0 6rem;
+    background-color: var(--bc-black);
+    color: var(--bc-white);
+}
+
+.artist-booking-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.artist-booking-content>span {
+    display: block;
+    margin-bottom: 1rem;
+
+    color: var(--bc-yellow);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.artist-booking h2 {
+    max-width: 650px;
+    margin: 0 auto 2rem;
+
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+.artist-booking-btn {
+    min-width: 270px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    padding: 1rem 1.5rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+
+    background: transparent;
+    color: var(--bc-white);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+    transition: 0.3s ease;
+}
+
+.artist-booking-btn:hover {
+    background: var(--bc-yellow);
+    border-color: var(--bc-yellow);
+    color: var(--bc-black);
+    transform: translateY(-3px);
+}
+
 
 /* ==================================================
    TIMELINE
@@ -2681,6 +2748,14 @@ h3 {
     }
 
     .error-page-btn {
+        width: 100%;
+    }
+
+    .artist-booking {
+        padding: 4rem 0;
+    }
+
+    .artist-booking-btn {
         width: 100%;
     }
 }
