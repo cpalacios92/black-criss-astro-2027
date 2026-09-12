@@ -2213,6 +2213,251 @@ h3 {
     transform: translateY(-3px);
 }
 
+/* ==================================================
+   MUSIC PAGE — HERO
+================================================== */
+
+.music-page-hero {
+    min-height: 75svh;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 10rem 0 6rem;
+
+    background:
+        radial-gradient(circle at 80% 30%,
+            rgba(15, 71, 173, 0.18),
+            transparent 35%),
+        var(--bc-black);
+
+    color: var(--bc-white);
+}
+
+.music-page-hero-content {
+    max-width: 1100px;
+}
+
+.music-page-eyebrow {
+    display: block;
+
+    margin-bottom: 1.2rem;
+
+    color: var(--bc-yellow);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.music-page-hero h1 {
+    margin: 0 0 2rem;
+
+    font-size: clamp(3.5rem, 7vw, 7.5rem);
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+}
+
+.music-page-hero p {
+    max-width: 620px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   MUSIC PLATFORMS
+================================================== */
+
+.music-platforms {
+    padding: 0 0 6rem;
+
+    background-color: var(--bc-black);
+}
+
+.music-platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.music-platform-card {
+    min-height: 150px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 2rem;
+
+    color: var(--bc-white);
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.music-platform-card+.music-platform-card {
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.music-platform-card img {
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+}
+
+.music-platform-card span:nth-child(2) {
+    margin-right: auto;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.music-platform-card:hover {
+    background-color: var(--bc-yellow);
+
+    color: var(--bc-black);
+}
+
+
+/* ==================================================
+   SETS & PLAYLISTS
+================================================== */
+
+.music-sets {
+    padding: 6rem 0;
+
+    background-color: #080808;
+
+    color: var(--bc-white);
+}
+
+.music-section-header {
+    margin-bottom: 3rem;
+}
+
+.music-section-header span {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    color: var(--bc-yellow);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.music-section-header h2 {
+    margin: 0;
+
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+
+/* Horizontal scroll
+-------------------------------------------------- */
+
+.music-sets-scroll {
+    display: flex;
+
+    gap: 1.5rem;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.music-sets-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Card
+-------------------------------------------------- */
+
+.music-set-card {
+    flex: 0 0 360px;
+
+    scroll-snap-align: start;
+
+    background-color: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    overflow: hidden;
+}
+
+.music-set-card>img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+}
+
+.music-set-content {
+    padding: 1.5rem;
+}
+
+.music-set-content>span {
+    color: var(--bc-yellow);
+
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.music-set-content h3 {
+    margin: 0.7rem 0 1.5rem;
+
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.music-set-content a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--bc-white);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.music-set-content a:hover {
+    color: var(--bc-yellow);
+}
+
 
 /* ==================================================
    RESPONSIVE — GALLERY
@@ -2757,5 +3002,56 @@ h3 {
 
     .artist-booking-btn {
         width: 100%;
+    }
+
+    .music-page-hero {
+        min-height: 70svh;
+
+        padding: 8rem 0 4rem;
+    }
+
+    .music-page-hero h1 {
+        font-size: clamp(3rem, 15vw, 5rem);
+    }
+
+
+    /* Platforms */
+
+    .music-platforms-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .music-platform-card {
+        min-height: 110px;
+
+        padding: 1.5rem;
+    }
+
+    .music-platform-card:nth-child(3) {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .music-platform-card:nth-child(4) {
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+
+    /* Sets */
+
+    .music-sets {
+        padding: 4.5rem 0;
+
+        overflow: hidden;
+    }
+
+    .music-sets-scroll {
+        margin-right: -1.5rem;
+
+        padding-right: 18%;
+    }
+
+    .music-set-card {
+        flex-basis: 82%;
     }
 }

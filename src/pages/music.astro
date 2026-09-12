@@ -1,0 +1,195 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Releases from "../components/Releases.astro";
+import Videos from "../components/Videos.astro";
+---
+
+<Layout title="Música">
+    <!-- ==================================================
+         MUSIC HERO
+    ================================================== -->
+
+    <section class="music-page-hero">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="music-page-hero-content">
+                <span class="music-page-eyebrow"> BLACK CRISS </span>
+
+                <h1>
+                    MÚSICA QUE NACE<br />
+                    DEL PACÍFICO<br />
+                    Y TERMINA EN LA PISTA.
+                </h1>
+
+                <p>
+                    Releases, sets, playlists y sesiones que conectan Tech
+                    House, raíces afro y cultura de club.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         PLATFORMS
+    ================================================== -->
+
+    <section class="music-platforms">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="music-platforms-grid">
+                <a
+                    href="https://www.beatport.com/es/artist/black-criss/136507"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="music-platform-card"
+                >
+                    <img src="/images/platforms/beatport.svg" alt="Beatport" />
+
+                    <span>BEATPORT</span>
+                    <span aria-hidden="true">→</span>
+                </a>
+
+                <a
+                    href="https://open.spotify.com/intl-es/artist/2d3g8OYlYBUdrR35hcxgbK?si=0nj8ohOgRlCr6adIXvyF6g"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="music-platform-card"
+                >
+                    <img src="/images/platforms/spotify.svg" alt="Spotify" />
+
+                    <span>SPOTIFY</span>
+                    <span aria-hidden="true">→</span>
+                </a>
+
+                <a
+                    href="https://soundcloud.com/blackcriss"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="music-platform-card"
+                >
+                    <img
+                        src="/images/platforms/soundcloud.svg"
+                        alt="SoundCloud"
+                    />
+
+                    <span>SOUNDCLOUD</span>
+                    <span aria-hidden="true">→</span>
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@blackcriss"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="music-platform-card"
+                >
+                    <img src="/images/platforms/youtube.svg" alt="YouTube" />
+
+                    <span>YOUTUBE</span>
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         RELEASES
+    ================================================== -->
+
+    <Releases />
+
+    <!-- ==================================================
+         SETS & PLAYLISTS
+    ================================================== -->
+
+    <section class="music-sets">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="music-section-header">
+                <span>SELECCIÓN BLACK CRISS</span>
+
+                <h2>SETS & PLAYLISTS</h2>
+            </div>
+
+            <div class="music-sets-scroll">
+                <!-- SET 01 -->
+                <article class="music-set-card">
+                    <img
+                        src="/images/music/set-01.webp"
+                        alt="Black Criss DJ Set"
+                    />
+
+                    <div class="music-set-content">
+                        <span>SOUNDCLOUD</span>
+
+                        <h3>BLACK CRISS — DJ SET</h3>
+
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            ESCUCHAR
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- SET 02 -->
+                <article class="music-set-card">
+                    <img
+                        src="/images/music/set-02.webp"
+                        alt="Black Criss Playlist"
+                    />
+
+                    <div class="music-set-content">
+                        <span>SPOTIFY</span>
+
+                        <h3>BLACK CRISS SELECTS</h3>
+
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            ESCUCHAR
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- SET 03 -->
+                <article class="music-set-card">
+                    <img
+                        src="/images/music/set-03.webp"
+                        alt="Black Criss Tech House"
+                    />
+
+                    <div class="music-set-content">
+                        <span>BEATPORT</span>
+
+                        <h3>TECH HOUSE PICKS</h3>
+
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            EXPLORAR
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- SET 04 -->
+                <article class="music-set-card">
+                    <img
+                        src="/images/music/set-04.webp"
+                        alt="Black Criss Live"
+                    />
+
+                    <div class="music-set-content">
+                        <span>YOUTUBE</span>
+
+                        <h3>LIVE SESSION</h3>
+
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            VER SET
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         VIDEOS
+    ================================================== -->
+
+    <Videos />
+</Layout>
