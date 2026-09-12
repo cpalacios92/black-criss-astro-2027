@@ -10,6 +10,37 @@
     --bc-white: #FFFFFF;
     --bc-black: #0D0D0F;
     --bc-gray: #E0E1E3;
+
+    --font-display: "Space Grotesk", sans-serif;
+    --font-body: "Inter", sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn,
+.menu-navigation,
+.explore-card-title {
+    font-family: var(--font-display);
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    letter-spacing: -0.035em;
+}
+
+.btn {
+    font-weight: 600;
+    letter-spacing: 0.1em;
 }
 
 
