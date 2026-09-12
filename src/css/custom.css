@@ -2046,6 +2046,106 @@ h3 {
     line-height: 1.6;
 }
 
+/* ==================================================
+   404
+================================================== */
+
+.error-page {
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 8rem 0 5rem;
+
+    background:
+        radial-gradient(circle at 70% 30%,
+            rgba(15, 71, 173, 0.15),
+            transparent 35%),
+        var(--bc-black);
+
+    color: var(--bc-white);
+}
+
+.error-page-content {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.error-page-label {
+    display: block;
+
+    margin-bottom: 1rem;
+
+    color: var(--bc-yellow);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.error-page h1 {
+    margin: 0;
+
+    font-size: clamp(9rem, 28vw, 24rem);
+    font-weight: 600;
+    line-height: 0.75;
+    letter-spacing: -0.08em;
+}
+
+.error-page p {
+    max-width: 520px;
+
+    margin: 3rem auto 2rem;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.error-page-btn {
+    min-width: 240px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    padding: 0.95rem 1.5rem;
+
+    border: 1px solid var(--bc-white);
+    border-radius: 50px;
+
+    background-color: transparent;
+
+    color: var(--bc-white);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.error-page-btn:hover {
+    background-color: var(--bc-yellow);
+    border-color: var(--bc-yellow);
+
+    color: var(--bc-black);
+
+    transform: translateY(-3px);
+}
+
 
 /* ==================================================
    RESPONSIVE — GALLERY
@@ -2566,5 +2666,21 @@ h3 {
         gap: 1rem;
 
         padding: 2rem 0;
+    }
+
+    .error-page {
+        padding: 7rem 0 4rem;
+    }
+
+    .error-page h1 {
+        font-size: clamp(8rem, 42vw, 14rem);
+    }
+
+    .error-page p {
+        margin-top: 2rem;
+    }
+
+    .error-page-btn {
+        width: 100%;
     }
 }
