@@ -82,28 +82,31 @@
 </section>
 
 <script>
-    const filters = document.querySelectorAll(".media-filter");
-    const items = document.querySelectorAll(".media-mix-item");
+    const mediaSection = document.querySelector(".media-mix-section");
 
-    filters.forEach((button) => {
-        button.addEventListener("click", () => {
-            const filter = button.getAttribute("data-filter");
+    if (mediaSection) {
+        const filters = mediaSection.querySelectorAll(".media-filter");
+        const items = mediaSection.querySelectorAll(".media-mix-item");
 
-            filters.forEach((item) => {
-                item.classList.remove("active");
-            });
+        filters.forEach((button) => {
+            button.addEventListener("click", () => {
+                const filter = button.getAttribute("data-filter");
 
-            button.classList.add("active");
+                filters.forEach((item) => {
+                    item.classList.remove("active");
+                });
 
-            items.forEach((item) => {
-                const type = item.getAttribute("data-media");
+                button.classList.add("active");
 
-                if (filter === "all" || type === filter) {
-                    item.classList.remove("is-hidden");
-                } else {
-                    item.classList.add("is-hidden");
-                }
+                items.forEach((item) => {
+                    const type = item.getAttribute("data-media");
+
+                    item.classList.toggle(
+                        "is-hidden",
+                        filter !== "all" && type !== filter,
+                    );
+                });
             });
         });
-    });
+    }
 </script>
