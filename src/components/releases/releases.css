@@ -1,0 +1,305 @@
+/* ==========================================================
+   COMPONENT: RELEASES
+========================================================== */
+
+.releases-section {
+    padding: 6rem 0;
+
+    overflow: hidden;
+
+    background-color: var(--bc-black);
+    color: var(--bc-white);
+}
+
+
+/* Header
+---------------------------------------------------------- */
+
+.releases-header {
+    margin-bottom: 3rem;
+
+    text-align: center;
+}
+
+.releases-header h2 {
+    margin: 0;
+
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    line-height: 1;
+}
+
+
+/* ==========================================================
+   HORIZONTAL RELEASES
+========================================================== */
+
+.releases-scroll {
+    display: flex;
+
+    gap: 1.5rem;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding-bottom: 1rem;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.releases-scroll::-webkit-scrollbar {
+    display: none;
+
+    width: 0;
+    height: 0;
+}
+
+
+/* ==========================================================
+   RELEASE CARD
+========================================================== */
+
+.release-card {
+    flex: 0 0 300px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--bc-border);
+
+    background-color: rgba(255, 255, 255, 0.02);
+
+    scroll-snap-align: start;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.release-card:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+
+    transform: translateY(-5px);
+}
+
+.release-card-artwork {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+}
+
+
+/* Card content
+---------------------------------------------------------- */
+
+.release-card-content {
+    padding: 1.3rem;
+}
+
+.release-card-content h3 {
+    margin: 0 0 1.2rem;
+
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+
+/* ==========================================================
+   PLATFORMS
+========================================================== */
+
+.release-card-platforms {
+    display: flex;
+
+    gap: 0.65rem;
+}
+
+.release-card-platforms a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.release-card-platforms img {
+    width: 20px;
+    height: 20px;
+
+    object-fit: contain;
+}
+
+.release-card-platforms a:hover {
+    border-color: var(--bc-yellow);
+
+    background-color: var(--bc-yellow);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   RELEASES NAVIGATION
+========================================================== */
+
+.releases-navigation {
+    margin-top: 1.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 0.65rem;
+}
+
+.releases-nav-btn {
+    width: 44px;
+    height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+
+    background-color: transparent;
+    color: var(--bc-white);
+
+    font-size: 1.15rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.releases-nav-btn:hover:not(:disabled) {
+    border-color: var(--bc-yellow);
+
+    background-color: var(--bc-yellow);
+    color: var(--bc-black);
+
+    transform: translateY(-2px);
+}
+
+.releases-nav-btn:disabled {
+    opacity: 0.25;
+
+    cursor: default;
+}
+
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.releases-cta {
+    max-width: 760px;
+
+    margin: 3rem auto 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+.releases-btn {
+    min-width: 260px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    padding: 0.95rem 1.5rem;
+
+    border: 1px solid var(--bc-white);
+    border-radius: 50px;
+
+    background-color: transparent;
+    color: var(--bc-white);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.releases-btn:hover {
+    border-color: var(--bc-yellow);
+
+    background-color: var(--bc-yellow);
+    color: var(--bc-black);
+}
+
+
+/* ==========================================================
+   RESPONSIVE — RELEASES
+========================================================== */
+
+@media (max-width: 767.98px) {
+
+    .releases-section {
+        padding: 4.5rem 0;
+    }
+
+    .releases-header {
+        margin-bottom: 2.5rem;
+
+        text-align: left;
+    }
+
+    .releases-scroll {
+        margin-right: -1.5rem;
+
+        padding-right: 1.5rem;
+        padding-bottom: 0;
+    }
+
+    .release-card {
+        flex-basis: 260px;
+    }
+
+    /* En móvil se navega directamente con el dedo */
+    .releases-navigation {
+        display: none;
+    }
+
+    .releases-cta {
+        margin-top: 3rem;
+
+        justify-content: flex-start;
+    }
+
+    .releases-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,129 @@
+/* ==========================================================
+   COMPONENT: VIDEOS
+========================================================== */
+
+.videos-section {
+    padding: 6rem 0;
+
+    background-color: var(--bc-black);
+    color: var(--bc-white);
+}
+
+.videos-header {
+    margin-bottom: 3rem;
+
+    text-align: center;
+}
+
+.videos-header h2 {
+    margin: 0;
+
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    line-height: 1;
+}
+
+.videos-layout {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+.video-card-featured {
+    width: 100%;
+
+    margin-bottom: 1.5rem;
+}
+
+.videos-secondary {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+}
+
+.video-card {
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background-color: rgba(255, 255, 255, 0.025);
+}
+
+.video-embed {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background-color: #000;
+}
+
+.video-embed iframe {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* Mobile horizontal scroll
+---------------------------------------------------------- */
+
+@media (max-width: 767.98px) {
+
+    .videos-section {
+        padding: 4.5rem 0;
+
+        overflow: hidden;
+    }
+
+    .videos-header {
+        margin-bottom: 2.5rem;
+
+        text-align: left;
+    }
+
+    .videos-layout {
+        display: flex;
+
+        gap: 12px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .videos-layout::-webkit-scrollbar {
+        display: none;
+    }
+
+    .video-card-featured,
+    .videos-secondary {
+        display: contents;
+    }
+
+    .video-card {
+        flex: 0 0 84%;
+
+        margin: 0;
+
+        scroll-snap-align: start;
+    }
+}

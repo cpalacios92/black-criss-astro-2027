@@ -1,0 +1,576 @@
+/* ==========================================================
+   COMPONENT: HEADER
+========================================================== */
+
+.site-header {
+    z-index: 1000;
+
+    background-color: rgba(13, 13, 15, 0.82);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-container {
+    width: 100%;
+
+    padding-inline: clamp(2rem, 4vw, 5rem);
+}
+
+.header-inner {
+    height: 90px;
+}
+
+
+/* Logo
+---------------------------------------------------------- */
+
+.header-brand {
+    line-height: 0;
+}
+
+.header-logo,
+.menu-logo {
+    display: block;
+
+    width: 145px;
+    height: auto;
+}
+
+
+/* Actions
+---------------------------------------------------------- */
+
+.header-actions {
+    gap: 1.25rem;
+}
+
+
+/* Listen button
+---------------------------------------------------------- */
+
+.header-listen-btn {
+    min-width: 155px;
+
+    padding: 0.85rem 1.5rem;
+
+    border: 1px solid var(--bc-white);
+    border-radius: 50px;
+
+    background-color: var(--bc-white);
+    color: var(--bc-black);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.header-listen-btn:hover {
+    background-color: var(--bc-yellow);
+    border-color: var(--bc-yellow);
+    color: var(--bc-black);
+
+    transform: translateY(-2px);
+}
+
+
+/* Menu trigger
+---------------------------------------------------------- */
+
+.menu-trigger {
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    color: var(--bc-white);
+
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 42px;
+    height: 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 6px;
+}
+
+.menu-icon span {
+    display: block;
+
+    width: 100%;
+    height: 3px;
+
+    border-radius: 3px;
+
+    background-color: var(--bc-white);
+
+    transition:
+        width 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.menu-trigger:hover .menu-icon span {
+    background-color: var(--bc-yellow);
+}
+
+.menu-trigger:hover .menu-icon span:nth-child(2) {
+    width: 75%;
+}
+
+.menu-trigger:hover .menu-icon span:nth-child(3) {
+    width: 55%;
+}
+
+
+/* ==========================================================
+   COMPONENT: OFFCANVAS MENU
+========================================================== */
+
+.main-menu {
+    --bs-offcanvas-width: 100vw;
+
+    overflow: hidden;
+
+    border: 0;
+
+    background:
+        radial-gradient(circle at 85% 20%,
+            rgba(15, 71, 173, 0.18),
+            transparent 30%),
+        var(--bc-black);
+
+    color: var(--bc-white);
+}
+
+.main-menu .offcanvas-header {
+    height: 90px;
+}
+
+.main-menu .offcanvas-body {
+    padding-top: 0;
+    padding-bottom: 2rem;
+}
+
+.menu-navigation {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.4rem;
+}
+
+.menu-navigation a {
+    width: fit-content;
+
+    color: var(--bc-white);
+
+    font-size: clamp(2.8rem, 6vw, 6rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.menu-navigation a:hover {
+    color: var(--bc-yellow);
+
+    transform: translateX(12px);
+}
+
+.menu-navigation:hover a:not(:hover) {
+    opacity: 0.35;
+}
+
+
+/* ==========================================================
+   COMPONENT: BRAND SLIDER
+========================================================== */
+
+.brand-slider {
+    position: relative;
+
+    background-color: var(--bc-black);
+}
+
+.brand-slide {
+    position: relative;
+
+    height: 100vh;
+    min-height: 650px;
+
+    overflow: hidden;
+}
+
+
+/* Image
+---------------------------------------------------------- */
+
+.brand-slide-bg {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* Overlay
+---------------------------------------------------------- */
+
+.brand-slide-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background: linear-gradient(to right,
+            rgba(13, 13, 15, 0.65),
+            rgba(13, 13, 15, 0.08));
+
+    pointer-events: none;
+}
+
+
+/* Content
+---------------------------------------------------------- */
+
+.brand-slide-container {
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+}
+
+.brand-slide-logo {
+    width: clamp(160px, 18vw, 280px);
+    height: auto;
+}
+
+
+/* Buttons
+---------------------------------------------------------- */
+
+.brand-slide-actions {
+    display: flex;
+
+    gap: 1rem;
+}
+
+.brand-slider-btn {
+    min-width: 180px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    padding: 0.9rem 1.4rem;
+
+    border-radius: 50px;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.brand-slider-btn:hover {
+    transform: translateY(-3px);
+}
+
+.brand-slider-btn-primary {
+    border: 1px solid var(--bc-white);
+
+    background-color: var(--bc-white);
+    color: var(--bc-black);
+}
+
+.brand-slider-btn-primary:hover {
+    border-color: var(--bc-yellow);
+
+    background-color: var(--bc-yellow);
+    color: var(--bc-black);
+}
+
+.brand-slider-btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    background-color: transparent;
+    color: var(--bc-white);
+}
+
+.brand-slider-btn-outline:hover {
+    border-color: var(--bc-white);
+
+    background-color: var(--bc-white);
+    color: var(--bc-black);
+}
+
+.brand-slider-btn-glass {
+    min-width: 320px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    background: rgba(13, 13, 15, 0.55);
+    color: var(--bc-white);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.brand-slider-btn-glass:hover {
+    border-color: var(--bc-white);
+
+    background-color: var(--bc-white);
+    color: var(--bc-black);
+}
+
+
+/* Slide: Hero
+---------------------------------------------------------- */
+
+.brand-slide-hero .brand-slide-overlay {
+    background: linear-gradient(to bottom,
+            rgba(13, 13, 15, 0.15),
+            rgba(13, 13, 15, 0.05) 60%,
+            rgba(13, 13, 15, 0.35));
+}
+
+.brand-hero-content {
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    padding-bottom: 7%;
+}
+
+
+/* Slide: Music
+---------------------------------------------------------- */
+
+.brand-music-content {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+    gap: 2rem;
+
+    text-align: right;
+}
+
+
+/* Slide: Impact
+---------------------------------------------------------- */
+
+.brand-slide-impact .brand-slide-overlay {
+    background: linear-gradient(to top,
+            rgba(13, 13, 15, 0.9),
+            rgba(13, 13, 15, 0.05) 65%);
+}
+
+.brand-impact-content {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding-bottom: 8rem;
+
+    text-align: center;
+
+    color: var(--bc-white);
+}
+
+.brand-slide-eyebrow {
+    margin-bottom: 1rem;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.brand-impact-title {
+    max-width: 850px;
+
+    margin-bottom: 2rem;
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+}
+
+
+/* Slide: Store
+---------------------------------------------------------- */
+
+.brand-slide-store .brand-slide-overlay {
+    background: linear-gradient(to left,
+            rgba(13, 13, 15, 0.8),
+            rgba(13, 13, 15, 0.05) 60%);
+}
+
+.brand-store-content {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.brand-store-copy {
+    width: min(450px, 40%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 1.5rem;
+
+    color: var(--bc-white);
+}
+
+.brand-store-copy p {
+    max-width: 400px;
+
+    margin: 0;
+
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    line-height: 1.5;
+}
+
+
+/* Controls
+---------------------------------------------------------- */
+
+.brand-slider-control {
+    z-index: 5;
+
+    width: 6%;
+}
+
+.brand-slider-indicators {
+    z-index: 5;
+
+    margin-bottom: 2rem;
+}
+
+.brand-slider-indicators [data-bs-target] {
+    width: 40px;
+    height: 2px;
+
+    border: 0;
+
+    background-color: var(--bc-white);
+}
+
+
+/* Mobile
+---------------------------------------------------------- */
+
+@media (max-width: 767.98px) {
+
+    .brand-slide {
+        height: 100svh;
+        min-height: 600px;
+    }
+
+    .brand-slide-overlay {
+        background: linear-gradient(to top,
+                rgba(13, 13, 15, 0.85),
+                rgba(13, 13, 15, 0.05) 70%);
+    }
+
+    .brand-hero-content {
+        align-items: flex-end;
+        justify-content: center;
+
+        padding-bottom: 6rem;
+    }
+
+    .brand-slider-btn-glass {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .brand-music-content {
+        align-items: flex-start;
+        justify-content: flex-end;
+
+        padding-bottom: 6rem;
+
+        text-align: left;
+    }
+
+    .brand-slide-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .brand-impact-content {
+        padding-bottom: 7rem;
+    }
+
+    .brand-store-content {
+        align-items: flex-end;
+        justify-content: flex-start;
+
+        padding-bottom: 6rem;
+    }
+
+    .brand-store-copy {
+        width: 100%;
+    }
+
+    .brand-slider-btn {
+        width: 100%;
+    }
+
+    .brand-slider-control {
+        display: none;
+    }
+
+    .brand-slide-music .brand-slide-logo,
+    .brand-slide-store .brand-slide-logo {
+        display: none;
+    }
+}
