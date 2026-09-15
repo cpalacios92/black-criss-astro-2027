@@ -1,0 +1,47 @@
+/* ==========================================================
+   COMPONENT: SHOWS
+========================================================== */
+
+.shows-section {
+    padding: 5.5rem 0;
+
+    background-color: var(--bc-dark);
+    color: var(--bc-white);
+}
+
+.shows-section[hidden] {
+    display: none;
+}
+
+.shows-header {
+    margin-bottom: 3.5rem;
+
+    text-align: center;
+}
+
+.shows-header h2 {
+    margin: 0;
+
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    line-height: 1;
+}
+
+.shows-widget {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+@media (max-width: 767.98px) {
+
+    .shows-section {
+        padding: 4rem 0;
+    }
+
+    .shows-header {
+        margin-bottom: 2.5rem;
+
+        text-align: left;
+    }
+}
