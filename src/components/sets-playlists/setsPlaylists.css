@@ -1,0 +1,130 @@
+/* ==========================================================
+   PAGE: MUSIC — SETS & PLAYLISTS
+========================================================== */
+
+.music-sets {
+    padding: 6rem 0;
+
+    background-color: var(--bc-dark);
+    color: var(--bc-white);
+}
+
+.music-section-header {
+    margin-bottom: 3rem;
+}
+
+.music-section-header span {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    color: var(--bc-yellow);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.music-section-header h2 {
+    margin: 0;
+
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    line-height: 1;
+}
+
+.music-sets-scroll {
+    display: flex;
+
+    gap: 1.5rem;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.music-sets-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.music-set-card {
+    flex: 0 0 360px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background-color: rgba(255, 255, 255, 0.025);
+
+    scroll-snap-align: start;
+}
+
+.music-set-card>img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+}
+
+.music-set-content {
+    padding: 1.5rem;
+}
+
+.music-set-content>span {
+    color: var(--bc-yellow);
+
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.music-set-content h3 {
+    margin: 0.7rem 0 1.5rem;
+
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.music-set-content a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--bc-white);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.music-set-content a:hover {
+    color: var(--bc-yellow);
+}
+
+@media (max-width: 767.98px) {
+
+    .music-sets {
+        padding: 4.5rem 0;
+
+        overflow: hidden;
+    }
+
+    .music-sets-scroll {
+        margin-right: -1.5rem;
+
+        padding-right: 18%;
+    }
+
+    .music-set-card {
+        flex-basis: 82%;
+    }
+}

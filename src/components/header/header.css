@@ -574,3 +574,49 @@
         display: none;
     }
 }
+
+/* ==========================================================
+   RESPONSIVE: HEADER / OFFCANVAS
+========================================================== */
+
+
+@media (max-width: 767.98px) {
+
+    .header-container {
+        padding-inline: 1.25rem;
+    }
+
+    .header-inner,
+    .main-menu .offcanvas-header {
+        height: 76px;
+    }
+
+    .header-logo,
+    .menu-logo {
+        width: 125px;
+    }
+
+    .header-actions {
+        gap: 0.8rem;
+    }
+
+    .header-listen-btn {
+        min-width: auto;
+
+        padding: 0.7rem 1rem;
+
+        font-size: 0.62rem;
+        letter-spacing: 0.08em;
+    }
+
+    .menu-icon {
+        width: 32px;
+        height: 24px;
+
+        gap: 5px;
+    }
+
+    .menu-navigation a {
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+    }
+}
