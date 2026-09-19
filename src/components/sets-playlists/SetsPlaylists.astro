@@ -8,7 +8,7 @@ import "../sets-playlists/setsPlaylists.css";
             <h2>SETS & PLAYLISTS</h2>
         </div>
 
-        <div class="music-sets-scroll">
+        <div class="music-sets-scroll" data-sets-scroll>
             <!-- SET 01 -->
             <article class="music-set-card">
                 <img
@@ -101,5 +101,84 @@ import "../sets-playlists/setsPlaylists.css";
                 </div>
             </article>
         </div>
+
+        <!-- NAVIGATION -->
+        <div
+            class="music-sets-navigation"
+            aria-label="Navegación de sets y playlists"
+        >
+            <button
+                class="music-sets-nav-btn"
+                type="button"
+                data-sets-prev
+                aria-label="Ver sets anteriores"
+            >
+                <span aria-hidden="true">←</span>
+            </button>
+
+            <button
+                class="music-sets-nav-btn"
+                type="button"
+                data-sets-next
+                aria-label="Ver más sets"
+            >
+                <span aria-hidden="true">→</span>
+            </button>
+        </div>
     </div>
 </section>
+
+<script>
+    const setsScroll =
+        document.querySelector<HTMLElement>("[data-sets-scroll]");
+
+    const previousButton =
+        document.querySelector<HTMLButtonElement>("[data-sets-prev]");
+
+    const nextButton =
+        document.querySelector<HTMLButtonElement>("[data-sets-next]");
+
+    if (setsScroll && previousButton && nextButton) {
+        const getScrollAmount = () => {
+            const card =
+                setsScroll.querySelector<HTMLElement>(".music-set-card");
+
+            if (!card) return 380;
+
+            const styles = window.getComputedStyle(setsScroll);
+            const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+
+            return card.offsetWidth + gap;
+        };
+
+        const updateNavigation = () => {
+            const maxScroll = setsScroll.scrollWidth - setsScroll.clientWidth;
+
+            previousButton.disabled = setsScroll.scrollLeft <= 5;
+
+            nextButton.disabled = setsScroll.scrollLeft >= maxScroll - 5;
+        };
+
+        previousButton.addEventListener("click", () => {
+            setsScroll.scrollBy({
+                left: -getScrollAmount(),
+                behavior: "smooth",
+            });
+        });
+
+        nextButton.addEventListener("click", () => {
+            setsScroll.scrollBy({
+                left: getScrollAmount(),
+                behavior: "smooth",
+            });
+        });
+
+        setsScroll.addEventListener("scroll", updateNavigation, {
+            passive: true,
+        });
+
+        window.addEventListener("resize", updateNavigation);
+
+        updateNavigation();
+    }
+</script>
