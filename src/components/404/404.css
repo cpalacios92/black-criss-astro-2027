@@ -2,6 +2,11 @@
    PAGE: 404
 ========================================================== */
 
+
+/* ==========================================================
+   SECTION
+========================================================== */
+
 .error-page {
     min-height: 100svh;
 
@@ -19,6 +24,11 @@
     color: var(--bc-white);
 }
 
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
 .error-page-content {
     max-width: 900px;
 
@@ -26,6 +36,10 @@
 
     text-align: center;
 }
+
+
+/* Label
+---------------------------------------------------------- */
 
 .error-page-label {
     display: block;
@@ -39,7 +53,11 @@
     letter-spacing: 0.18em;
 }
 
-.error-page h1 {
+
+/* 404
+---------------------------------------------------------- */
+
+.error-page-title {
     margin: 0;
 
     font-size: clamp(9rem, 28vw, 24rem);
@@ -47,7 +65,11 @@
     letter-spacing: -0.08em;
 }
 
-.error-page p {
+
+/* Description
+---------------------------------------------------------- */
+
+.error-page-description {
     max-width: 520px;
 
     margin: 3rem auto 2rem;
@@ -58,6 +80,11 @@
     font-weight: 300;
     line-height: 1.6;
 }
+
+
+/* ==========================================================
+   BUTTON
+========================================================== */
 
 .error-page-btn {
     min-width: 240px;
@@ -79,11 +106,12 @@
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.14em;
+    text-decoration: none;
 
     transition:
-        color 0.3s ease,
         background-color 0.3s ease,
         border-color 0.3s ease,
+        color 0.3s ease,
         transform 0.3s ease;
 }
 
@@ -96,17 +124,22 @@
     transform: translateY(-3px);
 }
 
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+
 @media (max-width: 767.98px) {
 
     .error-page {
         padding: 7rem 0 4rem;
     }
 
-    .error-page h1 {
+    .error-page-title {
         font-size: clamp(8rem, 42vw, 14rem);
     }
 
-    .error-page p {
+    .error-page-description {
         margin-top: 2rem;
     }
 

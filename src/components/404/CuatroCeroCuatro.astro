@@ -2,20 +2,20 @@
 import "../404/404.css";
 ---
 
-<section class="error-page">
+<section class="error-page" aria-labelledby="error-page-title">
     <div class="container-fluid px-4 px-lg-5">
         <div class="error-page-content">
-            <span class="error-page-label"> ERROR </span>
+            <span class="error-page-label">ERROR</span>
 
-            <h1>404</h1>
+            <h1 id="error-page-title" class="error-page-title">404</h1>
 
-            <p>
+            <p class="error-page-description">
                 Parece que este beat se salió de la pista. La página que buscas
                 no existe o cambió de lugar.
             </p>
 
             <a href="/" class="btn error-page-btn">
-                VOLVER AL INICIO
+                <span>VOLVER AL INICIO</span>
                 <span aria-hidden="true">→</span>
             </a>
         </div>
