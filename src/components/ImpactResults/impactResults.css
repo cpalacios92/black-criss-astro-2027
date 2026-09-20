@@ -1,0 +1,333 @@
+/* ==========================================================
+   COMPONENT: IMPACT RESULTS
+========================================================== */
+
+.impact-results {
+    padding: 7rem 0;
+
+    background-color: var(--bc-white);
+    color: var(--bc-black);
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.impact-results-header {
+    max-width: 900px;
+
+    margin-bottom: 4rem;
+}
+
+.impact-results-header>span {
+    display: block;
+
+    margin-bottom: 1.25rem;
+
+    color: var(--bc-green);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.impact-results-header h2 {
+    margin: 0;
+
+    font-size: clamp(2.8rem, 5vw, 5.5rem);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+}
+
+.impact-results-header p {
+    max-width: 680px;
+
+    margin: 2rem 0 0;
+
+    color: rgba(13, 13, 15, 0.68);
+
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   RESULTS GRID
+========================================================== */
+
+.impact-results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1rem;
+}
+
+
+/* ==========================================================
+   RESULT CARD
+========================================================== */
+
+.impact-result-card {
+    min-height: 360px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 2rem;
+
+    border: 1px solid rgba(13, 13, 15, 0.14);
+
+    background-color: rgba(13, 13, 15, 0.02);
+}
+
+.impact-result-card-featured {
+    background-color: var(--bc-black);
+    color: var(--bc-white);
+}
+
+.impact-result-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.impact-result-card:not(.impact-result-card-featured) .impact-result-label {
+    color: var(--bc-green);
+}
+
+.impact-result-card-featured .impact-result-label {
+    color: var(--bc-yellow);
+}
+
+.impact-result-card strong {
+    display: block;
+
+    margin: auto 0;
+
+    font-size: clamp(4rem, 7vw, 7rem);
+    font-weight: 600;
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+}
+
+.impact-result-card .impact-result-text {
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    line-height: 0.92;
+}
+
+.impact-result-card p {
+    max-width: 360px;
+
+    margin: 0;
+
+    color: rgba(13, 13, 15, 0.65);
+
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.impact-result-card-featured p {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+
+/* ==========================================================
+   SUPPORT
+========================================================== */
+
+.impact-results-support {
+    margin-top: 5rem;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 4rem;
+
+    padding-top: 4rem;
+
+    border-top: 1px solid rgba(13, 13, 15, 0.16);
+}
+
+
+/* Support heading
+---------------------------------------------------------- */
+
+.impact-results-support-heading>span {
+    display: block;
+
+    margin-bottom: 1rem;
+
+    color: var(--bc-green);
+
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.impact-results-support-heading h3 {
+    max-width: 650px;
+
+    margin: 0;
+
+    font-size: clamp(2rem, 3.5vw, 3.8rem);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+}
+
+
+/* Support list
+---------------------------------------------------------- */
+
+.impact-results-support-list {
+    border-top: 1px solid rgba(13, 13, 15, 0.16);
+}
+
+.impact-support-item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1.35rem 0;
+
+    border-bottom: 1px solid rgba(13, 13, 15, 0.16);
+}
+
+.impact-support-item span {
+    color: var(--bc-green);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.impact-support-item p {
+    margin: 0;
+
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+
+/* ==========================================================
+   CLOSING
+========================================================== */
+
+.impact-results-closing {
+    max-width: 760px;
+
+    margin: 4rem 0 0 auto;
+
+    padding-left: 2rem;
+
+    border-left: 3px solid var(--bc-yellow);
+}
+
+.impact-results-closing p {
+    margin: 0;
+
+    color: var(--bc-black);
+
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET
+========================================================== */
+
+@media (max-width: 991.98px) {
+
+    .impact-results-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .impact-result-card-featured {
+        grid-column: 1 / -1;
+    }
+
+    .impact-results-support {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+
+@media (max-width: 767.98px) {
+
+    .impact-results {
+        padding: 4.5rem 0;
+    }
+
+    .impact-results-header {
+        margin-bottom: 3rem;
+    }
+
+    .impact-results-header>span {
+        margin-bottom: 1rem;
+    }
+
+    .impact-results-header h2 {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+    }
+
+    .impact-results-header p {
+        margin-top: 1.5rem;
+
+        font-size: 0.95rem;
+    }
+
+    .impact-results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-result-card-featured {
+        grid-column: auto;
+    }
+
+    .impact-result-card {
+        min-height: 300px;
+
+        padding: 1.5rem;
+    }
+
+    .impact-result-card strong {
+        font-size: clamp(4rem, 20vw, 6rem);
+    }
+
+    .impact-result-card .impact-result-text {
+        font-size: clamp(2.4rem, 12vw, 3.8rem);
+    }
+
+    .impact-results-support {
+        margin-top: 4rem;
+
+        padding-top: 3rem;
+    }
+
+    .impact-support-item {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .impact-results-closing {
+        margin-top: 3rem;
+
+        padding-left: 1.25rem;
+    }
+}

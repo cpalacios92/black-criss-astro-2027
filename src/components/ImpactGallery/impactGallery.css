@@ -1,0 +1,223 @@
+/* ==========================================================
+   COMPONENT: IMPACT GALLERY
+========================================================== */
+
+.impact-gallery {
+    padding: 7rem 0;
+
+    overflow: hidden;
+
+    background-color: var(--bc-black);
+    color: var(--bc-white);
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.impact-gallery-header {
+    max-width: 900px;
+
+    margin-bottom: 4rem;
+}
+
+.impact-gallery-header>span {
+    display: block;
+
+    margin-bottom: 1.25rem;
+
+    color: var(--bc-yellow);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.impact-gallery-header h2 {
+    margin: 0;
+
+    font-size: clamp(2.8rem, 5vw, 5.5rem);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+}
+
+.impact-gallery-header p {
+    max-width: 650px;
+
+    margin: 2rem 0 0;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   GALLERY
+========================================================== */
+
+.impact-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 320px);
+
+    gap: 0.75rem;
+}
+
+.impact-gallery-item {
+    margin: 0;
+
+    overflow: hidden;
+
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.impact-gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.impact-gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+
+/* Layout
+---------------------------------------------------------- */
+
+.impact-gallery-item-1 {
+    grid-column: 1 / 6;
+    grid-row: 1 / 3;
+}
+
+.impact-gallery-item-2 {
+    grid-column: 6 / 9;
+    grid-row: 1 / 2;
+}
+
+.impact-gallery-item-3 {
+    grid-column: 9 / 13;
+    grid-row: 1 / 2;
+}
+
+.impact-gallery-item-4 {
+    grid-column: 6 / 10;
+    grid-row: 2 / 3;
+}
+
+.impact-gallery-item-5 {
+    grid-column: 10 / 12;
+    grid-row: 2 / 3;
+}
+
+.impact-gallery-item-6 {
+    grid-column: 12 / 13;
+    grid-row: 2 / 3;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET
+========================================================== */
+
+@media (max-width: 991.98px) {
+
+    .impact-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: none;
+    }
+
+    .impact-gallery-item,
+    .impact-gallery-item-1,
+    .impact-gallery-item-2,
+    .impact-gallery-item-3,
+    .impact-gallery-item-4,
+    .impact-gallery-item-5,
+    .impact-gallery-item-6 {
+        grid-column: auto;
+        grid-row: auto;
+
+        aspect-ratio: 4 / 5;
+    }
+
+    .impact-gallery-item-1,
+    .impact-gallery-item-4 {
+        grid-column: 1 / -1;
+
+        aspect-ratio: 16 / 9;
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+
+@media (max-width: 767.98px) {
+
+    .impact-gallery {
+        padding: 4.5rem 0;
+    }
+
+    .impact-gallery-header {
+        margin-bottom: 3rem;
+    }
+
+    .impact-gallery-header>span {
+        margin-bottom: 1rem;
+    }
+
+    .impact-gallery-header h2 {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+    }
+
+    .impact-gallery-header p {
+        margin-top: 1.5rem;
+
+        font-size: 0.95rem;
+    }
+
+    .impact-gallery-grid {
+        display: flex;
+
+        gap: 0.75rem;
+
+        overflow-x: auto;
+
+        margin-right: -1.5rem;
+        padding-right: 1.5rem;
+
+        scroll-snap-type: x mandatory;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .impact-gallery-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .impact-gallery-item,
+    .impact-gallery-item-1,
+    .impact-gallery-item-2,
+    .impact-gallery-item-3,
+    .impact-gallery-item-4,
+    .impact-gallery-item-5,
+    .impact-gallery-item-6 {
+        flex: 0 0 82%;
+
+        aspect-ratio: 4 / 5;
+
+        scroll-snap-align: start;
+    }
+}
