@@ -1,0 +1,57 @@
+---
+import "../impactPartners/impactPartners.css";
+
+const partners = [
+    {
+        name: "Marca aliada 01",
+        logo: "/images/impact/partners/partner-01.png",
+        url: "#",
+    },
+    {
+        name: "Marca aliada 02",
+        logo: "/images/impact/partners/partner-02.png",
+        url: "#",
+    },
+];
+---
+
+<section class="impact-partners" id="aliados">
+    <div class="container-fluid px-4 px-lg-5">
+        <!-- Header -->
+        <div class="impact-partners-header">
+            <span class="impact-partners-eyebrow"> ALIADOS </span>
+
+            <h2>
+                MARCAS QUE SE SUMAN<br />
+                AL IMPACTO.
+            </h2>
+
+            <p>
+                Empresas y organizaciones que creen en el poder de trabajar
+                juntos para generar oportunidades y aportar al desarrollo de las
+                comunidades del Chocó.
+            </p>
+        </div>
+
+        <!-- Partners -->
+        <div class="impact-partners-grid">
+            {
+                partners.map((partner) => (
+                    <a
+                        class="impact-partner"
+                        href={partner.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={partner.name}
+                    >
+                        <img
+                            src={partner.logo}
+                            alt={partner.name}
+                            loading="lazy"
+                        />
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</section>

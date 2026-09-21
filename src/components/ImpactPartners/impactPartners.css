@@ -1,0 +1,225 @@
+/* ==========================================================
+   COMPONENT: IMPACT PARTNERS
+========================================================== */
+
+.impact-partners {
+    padding: 7rem 0;
+
+    background-color: var(--bc-white);
+    color: var(--bc-black);
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.impact-partners-header {
+    max-width: 850px;
+
+    margin-bottom: 4.5rem;
+}
+
+
+/* Eyebrow
+---------------------------------------------------------- */
+
+.impact-partners-eyebrow {
+    display: block;
+
+    margin-bottom: 1.25rem;
+
+    color: var(--bc-green);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.18em;
+}
+
+
+/* Heading
+---------------------------------------------------------- */
+
+.impact-partners-header h2 {
+    margin: 0;
+
+    color: var(--bc-black);
+
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 600;
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+}
+
+
+/* Description
+---------------------------------------------------------- */
+
+.impact-partners-header p {
+    max-width: 650px;
+
+    margin: 2rem 0 0;
+
+    color: rgba(13, 13, 15, 0.65);
+
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   PARTNERS GRID
+========================================================== */
+
+.impact-partners-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    border-top: 1px solid rgba(13, 13, 15, 0.14);
+    border-bottom: 1px solid rgba(13, 13, 15, 0.14);
+}
+
+
+/* ==========================================================
+   PARTNER
+========================================================== */
+
+.impact-partner {
+    position: relative;
+
+    min-height: 260px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3.5rem;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Divider */
+
+.impact-partner+.impact-partner {
+    border-left: 1px solid rgba(13, 13, 15, 0.14);
+}
+
+
+/* Logo */
+
+.impact-partner img {
+    width: auto;
+    max-width: 260px;
+    max-height: 110px;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+
+/* Hover */
+
+.impact-partner:hover {
+    background-color: rgba(13, 13, 15, 0.025);
+}
+
+.impact-partner:hover img {
+    transform: scale(1.04);
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET
+========================================================== */
+
+@media (max-width: 991.98px) {
+
+    .impact-partners {
+        padding: 5.5rem 0;
+    }
+
+    .impact-partners-header {
+        margin-bottom: 3.5rem;
+    }
+
+    .impact-partner {
+        min-height: 220px;
+
+        padding: 3rem;
+    }
+
+    .impact-partner img {
+        max-width: 220px;
+        max-height: 95px;
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+
+@media (max-width: 767.98px) {
+
+    .impact-partners {
+        padding: 4.5rem 0;
+    }
+
+    .impact-partners-header {
+        margin-bottom: 3rem;
+    }
+
+    .impact-partners-eyebrow {
+        margin-bottom: 1rem;
+
+        font-size: 0.65rem;
+    }
+
+    .impact-partners-header h2 {
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+        line-height: 0.94;
+    }
+
+    .impact-partners-header p {
+        margin-top: 1.5rem;
+
+        font-size: 1rem;
+    }
+
+
+    /* Partners */
+
+    .impact-partners-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-partner {
+        min-height: 190px;
+
+        padding: 2.5rem 1.5rem;
+    }
+
+    .impact-partartner:first-child {
+        border-bottom: 1px solid rgba(13, 13, 15, 0.14);
+    }
+
+    .impact-partner+.impact-partner {
+        border-left: 0;
+        border-top: 1px solid rgba(13, 13, 15, 0.14);
+    }
+
+    .impact-partner img {
+        max-width: 210px;
+        max-height: 90px;
+    }
+}
