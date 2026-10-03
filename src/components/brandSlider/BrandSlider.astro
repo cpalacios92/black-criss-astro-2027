@@ -1,5 +1,6 @@
 ---
 import "../brandSlider/brand-slider.css";
+import { Image } from "astro:assets";
 ---
 
 <section
@@ -17,12 +18,23 @@ import "../brandSlider/brand-slider.css";
         ================================================== -->
 
         <div class="carousel-item active brand-slide brand-slide-hero">
-            <img
-                src="/images/slide/black-criss-bcith-tech-house-quibdo-choco-2.webp"
-                alt="Black Criss"
-                class="brand-slide-bg"
-            />
+            <picture>
+                <source
+                    media="(max-width: 767.98px)"
+                    srcset="/images/slide/black-criss-bcith-tech-house-quibdo-choco-2-mobile.webp"
+                />
 
+                <img
+                    src="/src/assets/slide/black-criss-bcith-tech-house-quibdo-choco-2.webp"
+                    width="1920"
+                    height="1080"
+                    alt="Black Criss, DJ y productor colombiano de música electrónica"
+                    class="brand-slide-bg"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                />
+            </picture>
             <div class="brand-slide-overlay"></div>
 
             <div class="brand-slide-container container-fluid px-4 px-lg-5">
@@ -53,9 +65,14 @@ import "../brandSlider/brand-slider.css";
         <!--
         <div class="carousel-item brand-slide brand-slide-impact">
             <img
-                src="/images/slide/quibdo-choco-colombia-impact.webp"
+                src="/src/assets/slide/quibdo-choco-colombia-impact.webp"
+                width="1920"
+                height="1080"
                 alt="Black Criss Impact en Chocó"
                 class="brand-slide-bg"
+                loading="lazy"
+                fetchpriority="low"
+                decoding="async"
             />
 
             <div class="brand-slide-overlay"></div>
@@ -86,9 +103,14 @@ import "../brandSlider/brand-slider.css";
 
         <div class="carousel-item brand-slide brand-slide-music">
             <img
-                src="/images/slide/black-criss-tech-house.webp"
-                alt="Black Criss"
+                src="/src/assets/slide/black-criss-tech-house.webp"
+                width="1920"
+                height="1080"
+                alt="Black Criss Music"
                 class="brand-slide-bg"
+                loading="lazy"
+                fetchpriority="low"
+                decoding="async"
             />
 
             <div class="brand-slide-overlay"></div>
@@ -130,9 +152,14 @@ import "../brandSlider/brand-slider.css";
 
         <div class="carousel-item brand-slide brand-slide-store">
             <img
-                src="/images/slide/black-criss-bcith-merch.webp"
+                src="/src/assets/slide/black-criss-bcith-merch.webp"
+                width="1920"
+                height="1080"
                 alt="Productos Black Criss"
                 class="brand-slide-bg"
+                loading="lazy"
+                fetchpriority="low"
+                decoding="async"
             />
 
             <div class="brand-slide-overlay"></div>

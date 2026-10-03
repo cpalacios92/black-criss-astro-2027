@@ -1,5 +1,6 @@
 ---
 import "../explore-sections/explore-sections.css";
+import { Image } from "astro:assets";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -8,9 +9,13 @@ const currentYear = new Date().getFullYear();
     <article class="explore-card explore-card-music">
         <div class="explore-card-visual">
             <img
-                src="/images/explore/black-criss-music.png"
+                src="/src/assets/explore/black-criss-music.png"
+                width="800"
+                height="800"
                 alt="Black Criss Música"
                 class="explore-card-image"
+                loading="lazy"
+                decoding="async"
             />
         </div>
 
@@ -32,9 +37,13 @@ const currentYear = new Date().getFullYear();
     <article class="explore-card explore-card-merch">
         <div class="explore-card-visual">
             <img
-                src="/images/explore/black-criss-merch-bcith.png"
+                src="/src/assets/explore/black-criss-merch-bcith.png"
+                width="800"
+                height="800"
                 alt="Black Criss Merch"
                 class="explore-card-image"
+                loading="lazy"
+                decoding="async"
             />
         </div>
 
@@ -57,9 +66,13 @@ const currentYear = new Date().getFullYear();
     <article class="explore-card explore-card-studio">
         <div class="explore-card-visual">
             <img
-                src="/images/explore/black-criss-in-studio.png"
+                src="/src/assets/explore/black-criss-in-studio.png"
+                width="800"
+                height="800"
                 alt="Black Criss In Studio"
                 class="explore-card-image"
+                loading="lazy"
+                decoding="async"
             />
         </div>
 
