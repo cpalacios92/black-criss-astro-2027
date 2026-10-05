@@ -2,6 +2,8 @@
 import "../gigs/gigs.css";
 ---
 
+<div class="gigs-load-trigger" data-gigs-load-trigger aria-hidden="true"></div>
+
 <section class="gigs-section" id="shows" data-gigs-section hidden>
     <div class="container-fluid px-4 px-lg-5">
         <!-- Header -->
@@ -465,5 +467,61 @@ import "../gigs/gigs.css";
         }
     }
 
-    loadGigs();
+    /* ======================================================
+   LAZY LOAD
+====================================================== */
+
+    const loadTrigger = document.querySelector<HTMLElement>(
+        "[data-gigs-load-trigger]",
+    );
+
+    let gigsLoaded = false;
+
+    function initializeGigs(): void {
+        if (gigsLoaded) {
+            return;
+        }
+
+        gigsLoaded = true;
+
+        loadGigs();
+    }
+
+    if ("IntersectionObserver" in window && loadTrigger) {
+        const gigsObserver = new IntersectionObserver(
+            (
+                entries: IntersectionObserverEntry[],
+                observer: IntersectionObserver,
+            ) => {
+                const entry = entries[0];
+
+                if (!entry?.isIntersecting) {
+                    return;
+                }
+
+                initializeGigs();
+
+                observer.disconnect();
+            },
+            {
+                root: null,
+
+                /*
+                 * Start loading before the user
+                 * actually reaches the section.
+                 */
+                rootMargin: "600px 0px",
+
+                threshold: 0,
+            },
+        );
+
+        gigsObserver.observe(loadTrigger);
+    } else {
+        /*
+         * Fallback for browsers without
+         * IntersectionObserver.
+         */
+        initializeGigs();
+    }
 </script>

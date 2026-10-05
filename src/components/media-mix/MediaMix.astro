@@ -10,16 +10,35 @@ import "../media-mix/media-mix.css";
         </div>
 
         <!-- Filters -->
-        <div class="media-mix-filters" aria-label="Filtrar contenido">
-            <button type="button" class="media-filter active" data-filter="all">
+        <div
+            class="media-mix-filters"
+            role="group"
+            aria-label="Filtrar contenido multimedia"
+        >
+            <button
+                type="button"
+                class="media-filter active"
+                data-filter="all"
+                aria-pressed="true"
+            >
                 TODO
             </button>
 
-            <button type="button" class="media-filter" data-filter="image">
+            <button
+                type="button"
+                class="media-filter"
+                data-filter="image"
+                aria-pressed="false"
+            >
                 FOTOS
             </button>
 
-            <button type="button" class="media-filter" data-filter="video">
+            <button
+                type="button"
+                class="media-filter"
+                data-filter="video"
+                aria-pressed="false"
+            >
                 VIDEOS
             </button>
         </div>
@@ -94,29 +113,34 @@ import "../media-mix/media-mix.css";
 </section>
 
 <script>
-    const mediaSection = document.querySelector(".media-mix-section");
+    const mediaSection =
+        document.querySelector<HTMLElement>(".media-mix-section");
 
     if (mediaSection) {
-        const filters = mediaSection.querySelectorAll(".media-filter");
-        const items = mediaSection.querySelectorAll(".media-mix-item");
+        const filters =
+            mediaSection.querySelectorAll<HTMLButtonElement>(".media-filter");
+
+        const items =
+            mediaSection.querySelectorAll<HTMLElement>(".media-mix-item");
 
         filters.forEach((button) => {
             button.addEventListener("click", () => {
-                const filter = button.getAttribute("data-filter");
+                const filter = button.dataset.filter ?? "all";
 
                 filters.forEach((item) => {
-                    item.classList.remove("active");
+                    const isActive = item === button;
+
+                    item.classList.toggle("active", isActive);
+
+                    item.setAttribute("aria-pressed", String(isActive));
                 });
 
-                button.classList.add("active");
-
                 items.forEach((item) => {
-                    const type = item.getAttribute("data-media");
+                    const type = item.dataset.media;
 
-                    item.classList.toggle(
-                        "is-hidden",
-                        filter !== "all" && type !== filter,
-                    );
+                    const shouldHide = filter !== "all" && type !== filter;
+
+                    item.classList.toggle("is-hidden", shouldHide);
                 });
             });
         });

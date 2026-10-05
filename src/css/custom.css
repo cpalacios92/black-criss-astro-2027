@@ -4,17 +4,12 @@
 ========================================================== */
 
 :root {
-    /* Brand */
     --bc-yellow: #FBDC0C;
     --bc-blue: #0F47AD;
     --bc-green: #098830;
-
-    /* Neutrals */
     --bc-white: #FFFFFF;
     --bc-black: #0D0D0F;
     --bc-gray: #E0E1E3;
-
-    /* Surfaces */
     --bc-dark: #080808;
     --bc-footer: #092315;
 
@@ -24,8 +19,8 @@
     --bc-text-muted: rgba(255, 255, 255, 0.7);
 
     /* Typography */
-    --font-display: "Space Grotesk", sans-serif;
-    --font-body: "Inter", sans-serif;
+    --font-display: "Space Grotesk Variable", sans-serif;
+    --font-body: "Inter Variable", sans-serif;
 }
 
 

@@ -9,6 +9,11 @@
     color: var(--bc-white);
 }
 
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
 .media-mix-header {
     margin-bottom: 2.5rem;
 
@@ -23,13 +28,15 @@
 }
 
 
-/* Filters
----------------------------------------------------------- */
+/* ==========================================================
+   FILTERS
+========================================================== */
 
 .media-mix-filters {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 
     gap: 2.5rem;
 
@@ -43,22 +50,38 @@
 
     border: 0;
 
-    background: transparent;
-    color: rgba(255, 255, 255, 0.4);
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.78);
 
+    font-family: var(--font-display);
     font-size: 0.8rem;
     font-weight: 700;
+    line-height: 1;
     letter-spacing: 0.1em;
 
     cursor: pointer;
 
-    transition: color 0.3s ease;
+    transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
 }
 
-.media-filter:hover,
+.media-filter:hover {
+    color: var(--bc-white);
+}
+
 .media-filter.active {
     color: var(--bc-white);
 }
+
+.media-filter:focus-visible {
+    outline: 2px solid var(--bc-yellow);
+    outline-offset: 5px;
+}
+
+
+/* Active line
+---------------------------------------------------------- */
 
 .media-filter::after {
     content: "";
@@ -81,8 +104,9 @@
 }
 
 
-/* Grid
----------------------------------------------------------- */
+/* ==========================================================
+   GRID
+========================================================== */
 
 .media-mix-grid {
     max-width: 1200px;
@@ -112,6 +136,11 @@
     display: none;
 }
 
+
+/* ==========================================================
+   IMAGES
+========================================================== */
+
 .media-mix-item img {
     display: block;
 
@@ -127,6 +156,11 @@
     transform: scale(1.03);
 }
 
+
+/* ==========================================================
+   SIZES
+========================================================== */
+
 .media-item-large,
 .media-item-tall {
     min-height: 650px;
@@ -141,8 +175,9 @@
 }
 
 
-/* Video
----------------------------------------------------------- */
+/* ==========================================================
+   VIDEO
+========================================================== */
 
 .media-video {
     width: 100%;
@@ -159,8 +194,9 @@
 }
 
 
-/* Mobile
----------------------------------------------------------- */
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
 
 @media (max-width: 767.98px) {
 
@@ -178,6 +214,10 @@
         gap: 1.7rem;
 
         margin-bottom: 2.5rem;
+    }
+
+    .media-filter {
+        font-size: 0.75rem;
     }
 
     .media-mix-grid {
