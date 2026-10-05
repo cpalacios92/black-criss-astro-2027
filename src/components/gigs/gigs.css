@@ -1,0 +1,335 @@
+/* ==========================================================
+   COMPONENT: GIGS
+========================================================== */
+
+.gigs-section {
+    padding: 5.5rem 0;
+
+    background-color: var(--bc-dark);
+    color: var(--bc-white);
+}
+
+.gigs-section[hidden] {
+    display: none;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.gigs-header {
+    margin-bottom: 2.5rem;
+
+    text-align: center;
+}
+
+.gigs-header>span {
+    display: block;
+
+    margin-bottom: 0.8rem;
+
+    color: var(--bc-yellow);
+
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.gigs-header h2 {
+    margin: 0;
+
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    line-height: 1;
+}
+
+
+/* ==========================================================
+   TABS
+========================================================== */
+
+.gigs-tabs {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto 2.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+}
+
+.gigs-tabs[hidden] {
+    display: none;
+}
+
+.gigs-tab {
+    padding: 0.75rem 1.25rem;
+
+    border: 1px solid var(--bc-border);
+    border-radius: 50px;
+
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.14em;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.gigs-tab:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+
+    color: var(--bc-white);
+}
+
+.gigs-tab.is-active {
+    border-color: var(--bc-yellow);
+
+    background-color: var(--bc-yellow);
+    color: var(--bc-black);
+}
+
+.gigs-tab:focus-visible {
+    outline: 2px solid var(--bc-yellow);
+    outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   PANELS
+========================================================== */
+
+.gigs-panel {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+.gigs-panel[hidden] {
+    display: none;
+}
+
+
+/* ==========================================================
+   LIST
+========================================================== */
+
+.gigs-list {
+    width: 100%;
+
+    border-top: 1px solid var(--bc-border);
+}
+
+
+/* ==========================================================
+   EVENT
+========================================================== */
+
+.gig-event {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns:
+        minmax(130px, 0.8fr) minmax(180px, 1.1fr) minmax(250px, 2fr) auto;
+
+    align-items: center;
+
+    gap: 2rem;
+
+    padding: 2rem 0;
+
+    border-bottom: 1px solid var(--bc-border);
+}
+
+
+/* Date
+---------------------------------------------------------- */
+
+.gig-event-date {
+    color: var(--bc-yellow);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.13em;
+}
+
+
+/* Location
+---------------------------------------------------------- */
+
+.gig-event-location {
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+/* Event name
+---------------------------------------------------------- */
+
+.gig-event-info h3 {
+    margin: 0;
+
+    color: var(--bc-white);
+
+    font-size: clamp(1.15rem, 1.6vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.gig-event-action {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.gig-event-btn {
+    min-width: 145px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1.5rem;
+
+    padding: 0.85rem 1.25rem;
+
+    border: 1px solid var(--bc-yellow);
+    border-radius: 50px;
+
+    background-color: var(--bc-yellow);
+    color: var(--bc-black);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.12em;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.gig-event-btn:hover {
+    border-color: var(--bc-white);
+
+    background-color: var(--bc-white);
+    color: var(--bc-black);
+
+    transform: translateY(-2px);
+}
+
+.gig-event-btn:focus-visible {
+    outline: 2px solid var(--bc-yellow);
+    outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET
+========================================================== */
+
+@media (max-width: 991.98px) {
+
+    .gig-event {
+        grid-template-columns:
+            minmax(110px, 0.8fr) minmax(150px, 1fr) minmax(180px, 1.5fr) auto;
+
+        gap: 1.25rem;
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+
+@media (max-width: 767.98px) {
+
+    .gigs-section {
+        padding: 4rem 0;
+    }
+
+    .gigs-header {
+        margin-bottom: 2rem;
+
+        text-align: left;
+    }
+
+    .gigs-tabs {
+        margin-bottom: 2rem;
+
+        justify-content: flex-start;
+    }
+
+    .gigs-tab {
+        flex: 1;
+
+        text-align: center;
+    }
+
+    .gig-event {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 0.65rem;
+
+        padding: 1.75rem 0;
+    }
+
+    .gig-event-date {
+        margin-bottom: 0.15rem;
+    }
+
+    .gig-event-location {
+        font-size: 0.68rem;
+    }
+
+    .gig-event-info {
+        width: 100%;
+    }
+
+    .gig-event-info h3 {
+        font-size: 1.35rem;
+    }
+
+    .gig-event-action {
+        width: 100%;
+
+        margin-top: 0.75rem;
+    }
+
+    .gig-event-btn {
+        width: 100%;
+    }
+}

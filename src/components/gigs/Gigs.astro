@@ -1,0 +1,469 @@
+---
+import "../gigs/gigs.css";
+---
+
+<section class="gigs-section" id="shows" data-gigs-section hidden>
+    <div class="container-fluid px-4 px-lg-5">
+        <!-- Header -->
+        <div class="gigs-header">
+            <h2>FECHAS</h2>
+        </div>
+
+        <!-- Tabs -->
+        <div
+            class="gigs-tabs"
+            data-gigs-tabs
+            role="tablist"
+            aria-label="Fechas de Black Criss"
+            hidden
+        >
+            <button
+                class="gigs-tab"
+                type="button"
+                role="tab"
+                data-gigs-tab="upcoming"
+                aria-controls="gigs-upcoming"
+                aria-selected="false"
+            >
+                PRÓXIMOS
+            </button>
+
+            <button
+                class="gigs-tab"
+                type="button"
+                role="tab"
+                data-gigs-tab="past"
+                aria-controls="gigs-past"
+                aria-selected="false"
+            >
+                PASADOS
+            </button>
+        </div>
+
+        <!-- Upcoming -->
+        <div
+            class="gigs-panel"
+            id="gigs-upcoming"
+            data-gigs-panel="upcoming"
+            role="tabpanel"
+            hidden
+        >
+            <div class="gigs-list" data-gigs-list="upcoming"></div>
+        </div>
+
+        <!-- Past -->
+        <div
+            class="gigs-panel"
+            id="gigs-past"
+            data-gigs-panel="past"
+            role="tabpanel"
+            hidden
+        >
+            <div class="gigs-list" data-gigs-list="past"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+    type EventsType = "upcoming" | "past";
+
+    interface BandsintownOffer {
+        type?: string;
+        url?: string;
+        status?: string;
+    }
+
+    interface BandsintownVenue {
+        name?: string;
+        city?: string;
+        country?: string;
+    }
+
+    interface BandsintownEvent {
+        id?: string;
+        title?: string;
+        datetime?: string;
+        url?: string;
+        venue?: BandsintownVenue;
+        offers?: BandsintownOffer[];
+    }
+
+    /* ======================================================
+       DOM
+    ====================================================== */
+
+    const gigsSection = document.querySelector<HTMLElement>(
+        "[data-gigs-section]",
+    );
+
+    const tabsContainer =
+        document.querySelector<HTMLElement>("[data-gigs-tabs]");
+
+    const upcomingTab = document.querySelector<HTMLButtonElement>(
+        '[data-gigs-tab="upcoming"]',
+    );
+
+    const pastTab = document.querySelector<HTMLButtonElement>(
+        '[data-gigs-tab="past"]',
+    );
+
+    const upcomingPanel = document.querySelector<HTMLElement>(
+        '[data-gigs-panel="upcoming"]',
+    );
+
+    const pastPanel = document.querySelector<HTMLElement>(
+        '[data-gigs-panel="past"]',
+    );
+
+    const upcomingList = document.querySelector<HTMLElement>(
+        '[data-gigs-list="upcoming"]',
+    );
+
+    const pastList = document.querySelector<HTMLElement>(
+        '[data-gigs-list="past"]',
+    );
+
+    /* ======================================================
+       BANDSINTOWN
+    ====================================================== */
+
+    const API_KEY = import.meta.env.PUBLIC_BANDSINTOWN_API_KEY as
+        string | undefined;
+
+    const ARTIST_ID =
+        (import.meta.env.PUBLIC_BANDSINTOWN_ARTIST_ID as string | undefined) ||
+        "15506677";
+
+    const API_URL = `https://rest.bandsintown.com/artists/id_${ARTIST_ID}/events`;
+
+    /* ======================================================
+       API
+    ====================================================== */
+
+    async function getEvents(type: EventsType): Promise<BandsintownEvent[]> {
+        if (!API_KEY) {
+            return [];
+        }
+
+        const url = new URL(API_URL);
+
+        url.searchParams.set("app_id", API_KEY);
+        url.searchParams.set("date", type);
+
+        const response = await fetch(url.toString());
+
+        if (!response.ok) {
+            throw new Error(`Bandsintown API error: ${response.status}`);
+        }
+
+        const data: unknown = await response.json();
+
+        if (!Array.isArray(data)) {
+            return [];
+        }
+
+        return data as BandsintownEvent[];
+    }
+
+    /* ======================================================
+       DATE
+    ====================================================== */
+
+    function formatEventDate(datetime?: string): string {
+        if (!datetime) {
+            return "";
+        }
+
+        const datePart = datetime.slice(0, 10);
+
+        const [year, month, day] = datePart.split("-").map(Number);
+
+        const date = new Date(Date.UTC(year, month - 1, day));
+
+        return new Intl.DateTimeFormat("es-CO", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+            timeZone: "UTC",
+        })
+            .format(date)
+            .replace(/\./g, "")
+            .toUpperCase();
+    }
+
+    /* ======================================================
+       EVENT LINK
+    ====================================================== */
+
+    function getEventLink(event: BandsintownEvent): {
+        url: string;
+        label: string;
+    } | null {
+        const offers = event.offers ?? [];
+
+        const ticketOffer =
+            offers.find(
+                (offer: BandsintownOffer) =>
+                    Boolean(offer.url) &&
+                    offer.type?.toLowerCase().includes("ticket"),
+            ) ?? offers.find((offer: BandsintownOffer) => Boolean(offer.url));
+
+        if (ticketOffer?.url) {
+            return {
+                url: ticketOffer.url,
+                label: "COMPRAR",
+            };
+        }
+
+        if (event.url) {
+            return {
+                url: event.url,
+                label: "VER GIG",
+            };
+        }
+
+        return null;
+    }
+
+    /* ======================================================
+       CREATE EVENT
+    ====================================================== */
+
+    function createEvent(event: BandsintownEvent): HTMLElement {
+        const article = document.createElement("article");
+
+        article.className = "gig-event";
+
+        /* Date */
+        const date = document.createElement("div");
+
+        date.className = "gig-event-date";
+
+        date.textContent = formatEventDate(event.datetime);
+
+        /* Location */
+        const location = document.createElement("div");
+
+        location.className = "gig-event-location";
+
+        const city = event.venue?.city ?? "";
+
+        const country = event.venue?.country ?? "";
+
+        location.textContent = [city, country].filter(Boolean).join(", ");
+
+        /* Event */
+        const information = document.createElement("div");
+
+        information.className = "gig-event-info";
+
+        const title = document.createElement("h3");
+
+        title.textContent =
+            event.title?.trim() ||
+            event.venue?.name?.trim() ||
+            "BLACK CRISS LIVE";
+
+        information.appendChild(title);
+
+        /* Action */
+        const action = document.createElement("div");
+
+        action.className = "gig-event-action";
+
+        const eventLink = getEventLink(event);
+
+        if (eventLink) {
+            const link = document.createElement("a");
+
+            link.className = "gig-event-btn";
+
+            link.href = eventLink.url;
+
+            link.target = "_blank";
+
+            link.rel = "noopener noreferrer";
+
+            const label = document.createElement("span");
+
+            label.textContent = eventLink.label;
+
+            const arrow = document.createElement("span");
+
+            arrow.setAttribute("aria-hidden", "true");
+
+            arrow.textContent = "→";
+
+            link.append(label, arrow);
+
+            action.appendChild(link);
+        }
+
+        article.append(date, location, information, action);
+
+        return article;
+    }
+
+    /* ======================================================
+       RENDER
+    ====================================================== */
+
+    function renderEvents(
+        events: BandsintownEvent[],
+        container: HTMLElement | null,
+    ): void {
+        if (!container) {
+            return;
+        }
+
+        container.replaceChildren();
+
+        events.forEach((event: BandsintownEvent) => {
+            container.appendChild(createEvent(event));
+        });
+    }
+
+    /* ======================================================
+       TABS
+    ====================================================== */
+
+    function activateTab(type: EventsType): void {
+        const isUpcoming = type === "upcoming";
+
+        upcomingTab?.classList.toggle("is-active", isUpcoming);
+
+        pastTab?.classList.toggle("is-active", !isUpcoming);
+
+        upcomingTab?.setAttribute("aria-selected", String(isUpcoming));
+
+        pastTab?.setAttribute("aria-selected", String(!isUpcoming));
+
+        if (upcomingPanel) {
+            upcomingPanel.hidden = !isUpcoming;
+        }
+
+        if (pastPanel) {
+            pastPanel.hidden = isUpcoming;
+        }
+    }
+
+    upcomingTab?.addEventListener("click", () => {
+        activateTab("upcoming");
+    });
+
+    pastTab?.addEventListener("click", () => {
+        activateTab("past");
+    });
+
+    /* ======================================================
+       LOAD EVENTS
+    ====================================================== */
+
+    async function loadGigs(): Promise<void> {
+        if (!API_KEY) {
+            console.error("PUBLIC_BANDSINTOWN_API_KEY no está configurada.");
+
+            return;
+        }
+
+        try {
+            const [upcomingEvents, pastEvents] = await Promise.all([
+                getEvents("upcoming"),
+                getEvents("past"),
+            ]);
+
+            /* Past: latest first */
+            pastEvents.sort((a: BandsintownEvent, b: BandsintownEvent) => {
+                const dateA = a.datetime ? new Date(a.datetime).getTime() : 0;
+
+                const dateB = b.datetime ? new Date(b.datetime).getTime() : 0;
+
+                return dateB - dateA;
+            });
+
+            /* Show only the 10 most recent past events */
+            const recentPastEvents = pastEvents.slice(0, 10);
+
+            /* Past: latest first */
+            pastEvents.sort((a: BandsintownEvent, b: BandsintownEvent) => {
+                const dateA = a.datetime ? new Date(a.datetime).getTime() : 0;
+
+                const dateB = b.datetime ? new Date(b.datetime).getTime() : 0;
+
+                return dateB - dateA;
+            });
+
+            const hasUpcoming = upcomingEvents.length > 0;
+
+            const hasPast = recentPastEvents.length > 0;
+
+            /* No events */
+            if (!hasUpcoming && !hasPast) {
+                return;
+            }
+
+            /* Render */
+            renderEvents(upcomingEvents, upcomingList);
+
+            renderEvents(recentPastEvents, pastList);
+
+            gigsSection?.removeAttribute("hidden");
+
+            /* Upcoming + Past */
+            if (hasUpcoming && hasPast) {
+                if (tabsContainer) {
+                    tabsContainer.hidden = false;
+                }
+
+                if (upcomingTab) {
+                    upcomingTab.hidden = false;
+                }
+
+                if (pastTab) {
+                    pastTab.hidden = false;
+                }
+
+                activateTab("upcoming");
+
+                return;
+            }
+
+            /* Only Upcoming */
+            if (hasUpcoming) {
+                if (tabsContainer) {
+                    tabsContainer.hidden = true;
+                }
+
+                if (upcomingPanel) {
+                    upcomingPanel.hidden = false;
+                }
+
+                if (pastPanel) {
+                    pastPanel.hidden = true;
+                }
+
+                return;
+            }
+
+            /* Only Past */
+            if (tabsContainer) {
+                tabsContainer.hidden = true;
+            }
+
+            if (upcomingPanel) {
+                upcomingPanel.hidden = true;
+            }
+
+            if (pastPanel) {
+                pastPanel.hidden = false;
+            }
+        } catch (error: unknown) {
+            console.error(
+                "No fue posible cargar los eventos de Bandsintown:",
+                error,
+            );
+        }
+    }
+
+    loadGigs();
+</script>
