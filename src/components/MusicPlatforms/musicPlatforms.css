@@ -1,0 +1,185 @@
+/* ==========================================================
+   COMPONENT: MUSIC PLATFORMS
+========================================================== */
+
+.music-platforms {
+    width: 100%;
+
+    padding-bottom: 6rem;
+
+    overflow: hidden;
+
+    background-color: var(--bc-black);
+}
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.music-platforms-grid {
+    width: 100%;
+    max-width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    border-top: 1px solid var(--bc-border);
+    border-bottom: 1px solid var(--bc-border);
+}
+
+
+/* ==========================================================
+   PLATFORM CARD
+========================================================== */
+
+.music-platform-card {
+    min-width: 0;
+    min-height: 150px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 2rem;
+
+    color: var(--bc-white);
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.music-platform-card+.music-platform-card {
+    border-left: 1px solid var(--bc-border);
+}
+
+.music-platform-card img {
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    object-fit: contain;
+}
+
+
+/* Platform name
+---------------------------------------------------------- */
+
+.music-platform-name {
+    min-width: 0;
+
+    margin-right: auto;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+}
+
+
+/* Arrow
+---------------------------------------------------------- */
+
+.music-platform-arrow {
+    flex: 0 0 auto;
+
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+
+/* Hover
+---------------------------------------------------------- */
+
+.music-platform-card:hover {
+    background-color: var(--bc-yellow);
+    color: var(--bc-black);
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+
+@media (max-width: 767.98px) {
+
+    .music-platforms {
+        padding-bottom: 4.5rem;
+    }
+
+    .music-platforms-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .music-platform-card {
+        min-width: 0;
+        min-height: 110px;
+
+        gap: 0.65rem;
+
+        padding: 1.25rem 1rem;
+    }
+
+    .music-platform-card+.music-platform-card {
+        border-left: 0;
+    }
+
+    .music-platform-card:nth-child(even) {
+        border-left: 1px solid var(--bc-border);
+    }
+
+    .music-platform-card:nth-child(n + 3) {
+        border-top: 1px solid var(--bc-border);
+    }
+
+    .music-platform-card img {
+        width: 27px;
+        height: 27px;
+
+        flex-basis: 27px;
+    }
+
+    .music-platform-name {
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+    }
+
+    .music-platform-arrow {
+        font-size: 1rem;
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================== */
+
+@media (max-width: 390px) {
+
+    .music-platform-card {
+        gap: 0.5rem;
+
+        padding: 1.1rem 0.8rem;
+    }
+
+    .music-platform-card img {
+        width: 25px;
+        height: 25px;
+
+        flex-basis: 25px;
+    }
+
+    .music-platform-name {
+        font-size: 0.62rem;
+        letter-spacing: 0.06em;
+    }
+
+    .music-platform-arrow {
+        font-size: 0.9rem;
+    }
+}

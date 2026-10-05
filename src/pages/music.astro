@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Platforms from "../components/MusicPlatforms/MusicPlatforms.astro";
 import Releases from "../components/releases/Releases.astro";
 import SetsPlaylists from "../components/sets-playlists/SetsPlaylists.astro";
 import Videos from "../components/videos/Videos.astro";
@@ -28,62 +29,7 @@ import Videos from "../components/videos/Videos.astro";
          PLATFORMS
     ================================================== -->
 
-    <section class="music-platforms">
-        <div class="container-fluid px-4 px-lg-5">
-            <div class="music-platforms-grid">
-                <a
-                    href="https://www.beatport.com/es/artist/black-criss/136507"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="music-platform-card"
-                >
-                    <img src="/images/platforms/beatport.svg" alt="Beatport" />
-
-                    <span>BEATPORT</span>
-                    <span aria-hidden="true">→</span>
-                </a>
-
-                <a
-                    href="https://open.spotify.com/intl-es/artist/2d3g8OYlYBUdrR35hcxgbK?si=0nj8ohOgRlCr6adIXvyF6g"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="music-platform-card"
-                >
-                    <img src="/images/platforms/spotify.svg" alt="Spotify" />
-
-                    <span>SPOTIFY</span>
-                    <span aria-hidden="true">→</span>
-                </a>
-
-                <a
-                    href="https://soundcloud.com/blackcriss"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="music-platform-card"
-                >
-                    <img
-                        src="/images/platforms/soundcloud.svg"
-                        alt="SoundCloud"
-                    />
-
-                    <span>SOUNDCLOUD</span>
-                    <span aria-hidden="true">→</span>
-                </a>
-
-                <a
-                    href="https://www.youtube.com/@blackcriss"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="music-platform-card"
-                >
-                    <img src="/images/platforms/youtube.svg" alt="YouTube" />
-
-                    <span>YOUTUBE</span>
-                    <span aria-hidden="true">→</span>
-                </a>
-            </div>
-        </div>
-    </section>
+    <Platforms />
 
     <!-- ==================================================
          RELEASES
