@@ -19,5 +19,8 @@
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "@astrojs/partytown": "^2.1.8"
   }
 }
