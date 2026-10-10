@@ -158,6 +158,7 @@
 /* Slide: Hero
 ---------------------------------------------------------- */
 
+
 /* ==========================================================
    HERO SLIDE
 ========================================================== */
@@ -209,6 +210,149 @@
     font-weight: 600;
     line-height: 0.95;
     letter-spacing: -0.045em;
+}
+
+
+/* ==========================================================
+   SLIDE: GAHVA
+========================================================== */
+
+.brand-slide-gahva {
+    position: relative;
+
+    background-color: var(--bc-black);
+}
+
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.brand-gahva-picture {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.brand-gahva-picture .brand-slide-bg {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+.brand-slide-gahva .brand-slide-overlay {
+    background:
+        linear-gradient(to top,
+            rgba(13, 13, 15, 0.82) 0%,
+            rgba(13, 13, 15, 0.28) 30%,
+            rgba(13, 13, 15, 0) 55%);
+}
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.brand-gahva-content {
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 3rem;
+
+    padding-bottom: 6rem;
+}
+
+
+/* ==========================================================
+   INFO
+========================================================== */
+
+.brand-gahva-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.6rem;
+}
+
+.brand-gahva-label {
+    color: var(--bc-yellow);
+
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.18em;
+}
+
+.brand-gahva-info p {
+    margin: 0;
+
+    color: var(--bc-white);
+
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+}
+
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.brand-gahva-btn {
+    min-width: 230px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    padding: 1rem 1.5rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50px;
+
+    background-color: rgba(13, 13, 15, 0.55);
+    backdrop-filter: blur(12px);
+
+    color: var(--bc-white);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.brand-gahva-btn:hover {
+    border-color: var(--bc-yellow);
+
+    background-color: var(--bc-yellow);
+    color: var(--bc-black);
+
+    transform: translateY(-3px);
 }
 
 
@@ -361,8 +505,6 @@
 }
 
 
-
-
 /* Mobile
 ---------------------------------------------------------- */
 
@@ -450,5 +592,42 @@
     .brand-slide-music .brand-slide-logo,
     .brand-slide-store .brand-slide-logo {
         display: none;
+    }
+
+    /* == GAHVA == */
+
+    .brand-gahva-picture .brand-slide-bg {
+        object-position: center;
+    }
+
+    .brand-slide-gahva .brand-slide-overlay {
+        background:
+            linear-gradient(to top,
+                rgba(13, 13, 15, 0.88) 0%,
+                rgba(13, 13, 15, 0.35) 24%,
+                rgba(13, 13, 15, 0) 48%);
+    }
+
+    .brand-gahva-content {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+
+        gap: 1.5rem;
+
+        padding-bottom: 2.5rem;
+    }
+
+    .brand-gahva-info {
+        gap: 0.5rem;
+    }
+
+    .brand-gahva-info p {
+        font-size: 0.95rem;
+    }
+
+    .brand-gahva-btn {
+        width: 100%;
+        min-width: 0;
     }
 }

@@ -13,27 +13,71 @@ import "../brandSlider/brand-slider.css";
 
     <div class="carousel-inner">
         <!-- ==================================================
-             SLIDE — HERO
-        ================================================== -->
+     SLIDE — GAHVA
+================================================== -->
 
-        <div class="carousel-item active brand-slide brand-slide-hero">
-            <picture>
+        <div class="carousel-item active brand-slide brand-slide-gahva">
+            <picture class="brand-gahva-picture">
                 <source
                     media="(max-width: 767.98px)"
-                    srcset="/images/slide/black-criss-bcith-tech-house-quibdo-choco-2-mobile.webp"
+                    srcset="/images/slide/black_criss_tech_house_quibdo_choco_gahva_mobile.webp"
+                    width="800"
+                    height="1200"
                 />
 
                 <img
-                    src="/images/slide/black-criss-bcith-tech-house-quibdo-choco-2.webp"
+                    src="/images/slide/black_criss_tech_house_quibdo_choco_gahva.webp"
                     width="1920"
                     height="1080"
-                    alt="Black Criss, DJ y productor colombiano de música electrónica"
+                    alt="Gahva — Black Criss y DJ Shakur"
                     class="brand-slide-bg"
                     loading="eager"
                     fetchpriority="high"
                     decoding="async"
                 />
             </picture>
+
+            <div class="brand-slide-overlay"></div>
+
+            <div class="brand-slide-container container-fluid px-4 px-lg-5">
+                <div class="brand-gahva-content">
+                    <div class="brand-gahva-info">
+                        <span class="brand-gahva-label">
+                            NUEVO LANZAMIENTO
+                        </span>
+
+                        <p>BLACK CRISS × DJ SHAKUR</p>
+                    </div>
+
+                    <a
+                        href="https://www.beatport.com/release/gahva/7501820"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn brand-slider-btn brand-gahva-btn"
+                        aria-label="Escuchar Gahva de Black Criss y DJ Shakur en Beatport"
+                    >
+                        ESCUCHAR GAHVA
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================================================
+             SLIDE — HERO
+        ================================================== -->
+
+        <div class="carousel-item brand-slide brand-slide-hero">
+            <img
+                src="/images/slide/black-criss-bcith-tech-house-quibdo-choco-2.webp"
+                width="1920"
+                height="1080"
+                alt="Black Criss, DJ y productor colombiano de música electrónica"
+                class="brand-slide-bg"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+            />
             <div class="brand-slide-overlay"></div>
 
             <div class="brand-slide-container container-fluid px-4 px-lg-5">
