@@ -69,6 +69,40 @@
     height: auto;
 }
 
+/* Slide: Octava
+---------------------------------------------------------- */
+
+.brand-slide-octava {
+    background-color: var(--bc-black);
+}
+
+.brand-octava-picture {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-octava-picture .brand-slide-bg {
+    position: static;
+}
+
+.brand-octava-content {
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    padding: 0 7% 4rem 0;
+}
+
+.brand-octava-btn {
+    min-width: 230px;
+}
+
 
 /* Buttons
 ---------------------------------------------------------- */
@@ -361,6 +395,26 @@
 ========================================================== */
 
 @media (max-width: 767.98px) {
+
+    .brand-octava-picture .brand-slide-bg {
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+    }
+
+    .brand-octava-content {
+        position: relative;
+        align-items: flex-end;
+        justify-content: center;
+
+        padding: 0 0 2.5rem;
+    }
+
+    .brand-octava-btn {
+        white-space: nowrap;
+    }
 
     .brand-slide-hero .brand-slide-overlay {
         background:
