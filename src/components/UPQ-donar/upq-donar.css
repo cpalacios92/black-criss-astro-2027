@@ -1,0 +1,106 @@
+.upq-donar {
+    scroll-margin-top: 6rem;
+    padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+    background:
+        radial-gradient(circle at 8% 15%, rgba(9, 136, 48, 0.12), transparent 28%),
+        var(--bc-black);
+    color: var(--bc-white);
+}
+
+.upq-donar-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+    align-items: center;
+    gap: clamp(2.5rem, 7vw, 6rem);
+    width: min(1200px, 100%);
+    margin-inline: auto;
+}
+
+.upq-donar-copy {
+    max-width: 720px;
+}
+
+.upq-donar-eyebrow {
+    margin: 0 0 1.5rem;
+    color: var(--bc-yellow);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.upq-donar-copy>p:not(.upq-donar-eyebrow) {
+    margin: 0 0 1.25rem;
+    color: var(--bc-text-muted);
+    font-size: clamp(1rem, 1.35vw, 1.1rem);
+    line-height: 1.8;
+}
+
+.upq-donar-copy h2 {
+    margin: 2.5rem 0 1.25rem;
+    color: var(--bc-white);
+    font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+@media (min-width: 768px) {
+    .upq-donar-copy h2 {
+        white-space: nowrap;
+    }
+}
+
+.upq-donar-cta {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    margin-top: 1rem;
+    padding: 1rem 1.4rem;
+    border: 1px solid var(--bc-yellow);
+    border-radius: 999px;
+    background: var(--bc-yellow);
+    color: var(--bc-black);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.upq-donar-cta:hover {
+    transform: translateY(-2px);
+    background: transparent;
+    color: var(--bc-yellow);
+}
+
+.upq-donar-form {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    border: 1px solid var(--bc-border);
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.04);
+    scroll-margin-top: 7rem;
+}
+
+.upq-donar-form iframe {
+    display: block;
+    width: min(350px, 100%);
+    height: 520px;
+    border: 0;
+    border-radius: 0.5rem;
+    background: var(--bc-white);
+}
+
+@media (max-width: 767.98px) {
+    .upq-donar-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+    }
+
+    .upq-donar-form {
+        padding: 0.75rem;
+    }
+}

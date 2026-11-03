@@ -1,5 +1,41 @@
 ---
+import BrandSlideCard from "./BrandSlideCard.astro";
 import "../brandSlider/brand-slider.css";
+
+const slides = [
+    {
+        name: "",
+        text: "",
+        image: "/images/slide/black_criss_tech_house_quibdo_choco_octava.png",
+        mobileImage:
+            "/images/slide/black_criss_tech_house_quibdo_choco_octava_mobile.png",
+        link: "https://soundcloud.com/blackcriss/black-criss-octava-club-bogota",
+        linkLabel: "ESCUCHAR EL SET",
+    },
+    {
+        name: "GAHVA",
+        text: "Nuevo lanzamiento de Black Criss × DJ Shakur.",
+        image: "/images/slide/black_criss_tech_house_quibdo_choco_gahva.webp",
+        mobileImage:
+            "/images/slide/black_criss_tech_house_quibdo_choco_gahva_mobile.webp",
+        link: "https://www.beatport.com/release/gahva/7501820",
+        linkLabel: "ESCUCHAR GAHVA",
+    },
+    {
+        name: "",
+        text: "DJ y productor colombiano de música electrónica.",
+        image: "/images/slide/black-criss-bcith-tech-house-quibdo-choco-2.webp",
+        link: "/music",
+        linkLabel: "ESCUCHAR AHORA",
+    },
+    {
+        name: "",
+        text: "Lleva la identidad Black Criss más allá de la música.",
+        image: "/images/slide/black-criss-bcith-merch.webp",
+        link: "https://shop.blackcriss.com/",
+        linkLabel: "IR A LA TIENDA",
+    },
+];
 ---
 
 <section
@@ -9,274 +45,13 @@ import "../brandSlider/brand-slider.css";
     data-bs-interval="5000"
     aria-label="Universo Black Criss"
 >
-    <!-- Slides -->
-
     <div class="carousel-inner">
-        <!-- ==================================================
-     SLIDE — OCTAVA
-================================================== -->
-
-        <div class="carousel-item active brand-slide brand-slide-octava">
-            <picture class="brand-octava-picture">
-                <source
-                    media="(max-width: 767.98px)"
-                    srcset="/images/slide/black_criss_tech_house_quibdo_choco_octava_mobile.png"
-                    width="1092"
-                    height="1536"
-                />
-
-                <img
-                    src="/images/slide/black_criss_tech_house_quibdo_choco_octava.png"
-                    width="1672"
-                    height="941"
-                    alt="Set de Black Criss en Octava Club, Bogotá"
-                    class="brand-slide-bg"
-                    loading="eager"
-                    fetchpriority="high"
-                    decoding="async"
-                />
-            </picture>
-
-            <div class="brand-slide-container container-fluid px-4 px-lg-5">
-                <div class="brand-octava-content">
-                    <a
-                        href="https://soundcloud.com/blackcriss/black-criss-octava-club-bogota"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn brand-slider-btn brand-slider-btn-glass brand-octava-btn"
-                        aria-label="Escuchar el set de Black Criss en Octava Club en SoundCloud"
-                    >
-                        ESCUCHAR EL SET
-                        <span aria-hidden="true">→</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ==================================================
-     SLIDE — GAHVA
-================================================== -->
-
-        <div class="carousel-item brand-slide brand-slide-gahva">
-            <picture class="brand-gahva-picture">
-                <source
-                    media="(max-width: 767.98px)"
-                    srcset="/images/slide/black_criss_tech_house_quibdo_choco_gahva_mobile.webp"
-                    width="800"
-                    height="1200"
-                />
-
-                <img
-                    src="/images/slide/black_criss_tech_house_quibdo_choco_gahva.webp"
-                    width="1920"
-                    height="1080"
-                    alt="Gahva — Black Criss y DJ Shakur"
-                    class="brand-slide-bg"
-                    loading="eager"
-                    fetchpriority="high"
-                    decoding="async"
-                />
-            </picture>
-
-            <div class="brand-slide-overlay"></div>
-
-            <div class="brand-slide-container container-fluid px-4 px-lg-5">
-                <div class="brand-gahva-content">
-                    <div class="brand-gahva-info">
-                        <span class="brand-gahva-label">
-                            NUEVO LANZAMIENTO
-                        </span>
-
-                        <p>BLACK CRISS × DJ SHAKUR</p>
-                    </div>
-
-                    <a
-                        href="https://www.beatport.com/release/gahva/7501820"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn brand-slider-btn brand-gahva-btn"
-                        aria-label="Escuchar Gahva de Black Criss y DJ Shakur en Beatport"
-                    >
-                        ESCUCHAR GAHVA
-                        <span aria-hidden="true">→</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ==================================================
-             SLIDE — HERO
-        ================================================== -->
-
-        <div class="carousel-item brand-slide brand-slide-hero">
-            <img
-                src="/images/slide/black-criss-bcith-tech-house-quibdo-choco-2.webp"
-                width="1920"
-                height="1080"
-                alt="Black Criss, DJ y productor colombiano de música electrónica"
-                class="brand-slide-bg"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-            />
-            <div class="brand-slide-overlay"></div>
-
-            <div class="brand-slide-container container-fluid px-4 px-lg-5">
-                <div class="brand-hero-content">
-                    <div class="brand-hero-text">
-                        <h1>
-                            DJ/PRODUCTOR COLOMBIANO<br />
-                            DE MÚSICA ELECTRÓNICA
-                        </h1>
-                    </div>
-
-                    <a
-                        href="/music"
-                        rel="noopener noreferrer"
-                        class="btn brand-slider-btn brand-slider-btn-glass"
-                    >
-                        ESCUCHAR AHORA
-                        <span aria-hidden="true">→</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ==================================================
-             SLIDE — IMPACT
-        ================================================== -->
-
-        <!--
-        <div class="carousel-item brand-slide brand-slide-impact">
-            <img
-                src="/images/slide/quibdo-choco-colombia-impact.webp"
-                width="1920"
-                height="1080"
-                alt="Black Criss Impact en Chocó"
-                class="brand-slide-bg"
-                loading="lazy"
-                fetchpriority="low"
-                decoding="async"
-            />
-
-            <div class="brand-slide-overlay"></div>
-
-            <div class="brand-slide-container container-fluid px-4 px-lg-5">
-                <div class="brand-impact-content">
-                    <p class="brand-slide-eyebrow">BLACK CRISS IMPACT</p>
-
-                    <h2 class="brand-impact-title">
-                        La música también puede dejar huella.
-                    </h2>
-
-                    <a
-                        href="impact"
-                        class="btn brand-slider-btn brand-slider-btn-primary"
-                    >
-                        CONOCE EL PROGRAMA
-                        <span aria-hidden="true">→</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        -->
-
-        <!-- ==================================================
-             SLIDE — MUSIC
-        ================================================== -->
-
-        <div class="carousel-item brand-slide brand-slide-music">
-            <img
-                src="/images/slide/black-criss-tech-house.webp"
-                width="1920"
-                height="1080"
-                alt="Black Criss Music"
-                class="brand-slide-bg"
-                loading="lazy"
-                fetchpriority="low"
-                decoding="async"
-            />
-
-            <div class="brand-slide-overlay"></div>
-
-            <div class="brand-slide-container container-fluid px-4 px-lg-5">
-                <div class="brand-music-content">
-                    <img
-                        src="/images/branding/black-criss-tech-house-header-logo-white.svg"
-                        alt="Black Criss"
-                        class="brand-slide-logo"
-                    />
-
-                    <div class="brand-slide-actions">
-                        <a
-                            href="/music"
-                            class="btn brand-slider-btn brand-slider-btn-primary"
-                        >
-                            MÚSICA
-                            <span aria-hidden="true">→</span>
-                        </a>
-
-                        <a
-                            href="https://www.gigg.me/blackcriss"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn brand-slider-btn brand-slider-btn-outline"
-                        >
-                            BOOKING
-                            <span aria-hidden="true">→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ==================================================
-             SLIDE — STORE
-        ================================================== -->
-
-        <div class="carousel-item brand-slide brand-slide-store">
-            <img
-                src="/images/slide/black-criss-bcith-merch.webp"
-                width="1920"
-                height="1080"
-                alt="Productos Black Criss"
-                class="brand-slide-bg"
-                loading="lazy"
-                fetchpriority="low"
-                decoding="async"
-            />
-
-            <div class="brand-slide-overlay"></div>
-
-            <div class="brand-slide-container container-fluid px-4 px-lg-5">
-                <div class="brand-store-content">
-                    <div class="brand-store-copy">
-                        <img
-                            src="/images/branding/black-criss-tech-house-header-logo-white.svg"
-                            alt="Black Criss"
-                            class="brand-slide-logo"
-                        />
-
-                        <p>
-                            Lleva la identidad Black Criss más allá de la
-                            música.
-                        </p>
-
-                        <a
-                            href="https://shop.blackcriss.com/"
-                            class="btn brand-slider-btn brand-slider-btn-primary"
-                            target="_blank"
-                        >
-                            IR A LA TIENDA
-                            <span aria-hidden="true">→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {
+            slides.map((slide, index) => (
+                <BrandSlideCard slide={slide} active={index === 0} />
+            ))
+        }
     </div>
-
-    <!-- Controls -->
 
     <button
         class="carousel-control-prev brand-slider-control"

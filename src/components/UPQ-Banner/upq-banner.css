@@ -1,0 +1,65 @@
+.upq-banner {
+    min-height: min(760px, 82svh);
+    display: flex;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 8rem max(1.5rem, calc((100vw - 1200px) / 2));
+    background: url("/images/upq/black_criss_unidos_por_quibdo.webp") center 45% / cover no-repeat;
+    color: var(--bc-white);
+}
+
+.upq-banner::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.76) 0%,
+        rgba(0, 0, 0, 0.56) 52%,
+        rgba(0, 0, 0, 0.28) 100%
+    );
+    content: "";
+}
+
+.upq-banner-content {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.upq-banner h1 {
+    display: grid;
+    gap: 0.12em;
+    margin: 0;
+    font-size: clamp(2.7rem, 7.3vw, 6.8rem);
+    font-weight: 700;
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+    text-wrap: balance;
+    text-shadow: 0 3px 24px rgba(0, 0, 0, 0.4);
+}
+
+.upq-banner h1 span:last-child {
+    color: var(--bc-yellow);
+}
+
+@media (max-width: 767.98px) {
+    .upq-banner {
+        min-height: 70svh;
+        padding: 7rem 1.5rem 5rem;
+        background-position: 58% center;
+    }
+
+    .upq-banner::before {
+        background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72) 0%,
+            rgba(0, 0, 0, 0.48) 100%
+        );
+    }
+
+    .upq-banner h1 {
+        font-size: clamp(2.8rem, 12vw, 5rem);
+    }
+}
