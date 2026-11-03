@@ -139,6 +139,37 @@
     line-height: 1;
 }
 
+.upq-results-cta-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.upq-results-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--bc-yellow);
+    border-radius: 999px;
+    background: var(--bc-yellow);
+    color: var(--bc-black);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.upq-results-cta:hover {
+    transform: translateY(-2px);
+    background: transparent;
+    color: var(--bc-yellow);
+}
+
 @media (max-width: 991.98px) {
     .upq-results-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
