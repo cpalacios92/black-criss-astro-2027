@@ -17,14 +17,6 @@
     margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
-.upq-results-eyebrow {
-    margin: 0 0 1rem;
-    color: var(--bc-yellow);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-}
-
 .upq-results-header h2 {
     margin: 0;
     font-size: clamp(2.5rem, 6vw, 5rem);

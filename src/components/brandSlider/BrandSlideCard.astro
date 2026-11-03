@@ -15,13 +15,33 @@ const { slide, active } = Astro.props;
 const isExternalLink = slide.link.startsWith("http");
 ---
 
-<div class:list={["carousel-item", "brand-slide", active && "active"]}>
-    {slide.mobileImage ? (
-        <picture class="brand-slide-picture">
-            <source
-                media="(max-width: 767.98px)"
-                srcset={slide.mobileImage}
-            />
+<div
+    class:list={[
+        "carousel-item",
+        "brand-slide",
+        slide.name === "Unidos Por Quibdó" && "brand-slide-upq",
+        active && "active",
+    ]}
+>
+    {
+        slide.mobileImage ? (
+            <picture class="brand-slide-picture">
+                <source
+                    media="(max-width: 767.98px)"
+                    srcset={slide.mobileImage}
+                />
+                <img
+                    src={slide.image}
+                    width="1920"
+                    height="1080"
+                    alt={`${slide.name}: ${slide.text}`}
+                    class="brand-slide-bg"
+                    loading={active ? "eager" : "lazy"}
+                    fetchpriority={active ? "high" : "low"}
+                    decoding="async"
+                />
+            </picture>
+        ) : (
             <img
                 src={slide.image}
                 width="1920"
@@ -32,21 +52,10 @@ const isExternalLink = slide.link.startsWith("http");
                 fetchpriority={active ? "high" : "low"}
                 decoding="async"
             />
-        </picture>
-    ) : (
-        <img
-            src={slide.image}
-            width="1920"
-            height="1080"
-            alt={`${slide.name}: ${slide.text}`}
-            class="brand-slide-bg"
-            loading={active ? "eager" : "lazy"}
-            fetchpriority={active ? "high" : "low"}
-            decoding="async"
-        />
-    )}
+        )
+    }
 
-    <div class="brand-slide-overlay" />
+    <div class="brand-slide-overlay"></div>
 
     <div class="brand-slide-container container-fluid px-4 px-lg-5">
         <div class="brand-slide-content">
@@ -58,11 +67,15 @@ const isExternalLink = slide.link.startsWith("http");
                 href={slide.link}
                 target={isExternalLink ? "_blank" : undefined}
                 rel={isExternalLink ? "noopener noreferrer" : undefined}
-                class="btn brand-slider-btn"
+                class:list={[
+                    "btn",
+                    "brand-slider-btn",
+                    slide.name === "Unidos Por Quibdó" &&
+                        "brand-slider-btn-upq",
+                ]}
                 aria-label={`${slide.linkLabel}: ${slide.name}`}
             >
                 {slide.linkLabel}
-                <span aria-hidden="true">→</span>
             </a>
         </div>
     </div>

@@ -104,16 +104,6 @@
     justify-self: end;
 }
 
-.footer-label {
-    margin-bottom: 0.8rem;
-
-    color: var(--bc-yellow);
-
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-}
-
 .footer-booking h2 {
     margin: 0 0 1.5rem;
 
