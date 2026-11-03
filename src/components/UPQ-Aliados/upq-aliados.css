@@ -1,0 +1,71 @@
+.upq-aliados {
+    scroll-margin-top: 6rem;
+    padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+    background: var(--bc-black);
+    color: var(--bc-white);
+}
+
+.upq-aliados-container {
+    width: min(1200px, 100%);
+    margin-inline: auto;
+}
+
+.upq-aliados-header {
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+    text-align: center;
+}
+
+.upq-aliados-eyebrow {
+    margin: 0 0 1rem;
+    color: var(--bc-yellow);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.upq-aliados-header h2 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.upq-aliados-header h2 span {
+    color: var(--bc-yellow);
+}
+
+.upq-aliados-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.upq-aliado {
+    display: grid;
+    min-height: 170px;
+    place-items: center;
+    padding: 1.5rem;
+    overflow: hidden;
+    border: 1px solid var(--bc-border);
+    border-radius: 1rem;
+    background: var(--bc-white);
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.upq-aliado:hover {
+    transform: translateY(-4px);
+    border-color: var(--bc-yellow);
+}
+
+.upq-aliado img {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: 125px;
+    object-fit: contain;
+}

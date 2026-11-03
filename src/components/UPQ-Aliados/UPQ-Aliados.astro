@@ -1,0 +1,40 @@
+---
+import "./upq-aliados.css";
+
+const aliados = [
+    {
+        nombre: "Vibra Positivo Fest",
+        logo: "/images/upq/logos/vibra-positivo-fest.png",
+    },
+    {
+        nombre: "Miradores Medellín",
+        logo: "/images/upq/logos/miradores.jpeg",
+    },
+    {
+        nombre: "Gigg.me",
+        logo: "/images/upq/logos/GIGG.ME.png",
+    },
+];
+---
+
+<section class="upq-aliados" id="aliados">
+    <div class="upq-aliados-container">
+        <header class="upq-aliados-header">
+            <h2>Nuestros aliados <span>y colaboradores</span></h2>
+        </header>
+
+        <ul class="upq-aliados-list">
+            {
+                aliados.map(({ nombre, logo }) => (
+                    <li class="upq-aliado">
+                        <img
+                            src={logo}
+                            alt={`Logo de ${nombre}`}
+                            loading="lazy"
+                        />
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</section>
