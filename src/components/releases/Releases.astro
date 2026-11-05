@@ -1,5 +1,107 @@
 ---
 import "../releases/releases.css";
+
+const releases = [
+    {
+        image: "/images/releases/black_criss_tech_house_gahva_quibdo_choco.webp",
+        name: "GAHVA",
+        type: "EP",
+        artist: "Black Criss",
+        year: 2026,
+        beatport: "https://www.beatport.com/release/gahva/7501820",
+        spotify: "https://open.spotify.com/album/37mKECWLzuhP1nycPut3GD?si=kiWrLerUSEeZ4ns2IteSrQ",
+        appleMusic: "https://music.apple.com/es/album/gahva-single/6814890244",
+        youtubeMusic: "https://music.youtube.com/search?q=Black+Criss+Gahva",
+    },
+    {
+        image: "/images/releases/black-criss-tech-house-the-negritos-vol-2-kore-music.webp",
+        name: "THE NEGRITOS VOL. 2",
+        type: "EP",
+        artist: "Black Criss",
+        year: 2026,
+        beatport: "https://www.beatport.com/es/release/the-negritos-vol2/7240255",
+        spotify: "https://open.spotify.com/intl-es/album/1NA2BL84YGw0gDPH6q3hQL?si=jtW1eIiwTdWr5O_TpMPYUQ",
+        appleMusic: "https://music.apple.com/es/album/the-negritos-vol-2-ep/6793250401",
+        youtubeMusic: "https://music.youtube.com/search?q=Black+Criss+The+Negritos+Vol+2",
+    },
+    {
+        image: "/images/releases/black-criss-tech-house-bcith13-kore-music.webp",
+        name: "BCITH13",
+        type: "EP",
+        artist: "Black Criss",
+        year: 2025,
+        beatport: "https://www.beatport.com/es/release/bcith13/5394510",
+        spotify: "https://open.spotify.com/intl-es/album/545ZKIBlx72l0e8CjOdrIP?si=qXnvTNhXS3-Zo9aeJr6o6A",
+        appleMusic: "https://music.apple.com/es/album/bcith13-ep/1839953454",
+        youtubeMusic: "https://music.youtube.com/search?q=Black+Criss+BCITH13",
+    },
+    {
+        image: "/images/releases/black-criss-tech-house-yes-is-more-vol-3-kore-music.webp",
+        name: "YES IS MORE VOL. 3",
+        type: "EP",
+        artist: "Black Criss",
+        year: 2024,
+        beatport: "https://www.beatport.com/es/release/yes-is-more-vol-3/4467125",
+        spotify: "https://open.spotify.com/intl-es/album/4YVTWtPkzctmeFRrhLEyd1?si=FIGcPanZTPCDPB6c8UDINA",
+        appleMusic: "https://music.apple.com/es/album/yes-is-more-vol-3-single/1732866775",
+        youtubeMusic: "https://music.youtube.com/search?q=Black+Criss+Yes+Is+More+Vol+3",
+    },
+    {
+        image: "/images/releases/black-criss-tech-house-bcith9-kore-music.webp",
+        name: "BCITH9",
+        type: "EP",
+        artist: "Black Criss",
+        year: 2021,
+        beatport: "https://www.beatport.com/es/release/bcith9/3540986",
+        spotify: "https://open.spotify.com/intl-es/album/0CqRugo2n6CANpGEwyr4yG?si=rwcYFfntQ2eLpk1UeTIS5g",
+        appleMusic: "https://music.apple.com/es/album/bcith9/1589551937",
+        youtubeMusic: "https://music.youtube.com/search?q=Black+Criss+BCITH9",
+    },
+    {
+        image: "/images/releases/black-criss-tech-house-corazon-maximal-records.webp",
+        name: "CORAZÓN",
+        type: "Single",
+        artist: "Black Criss",
+        year: 2021,
+        beatport: "https://www.beatport.com/es/release/corazon/3367804",
+        spotify: "https://open.spotify.com/intl-es/album/6ykkHKmc6JjGZe3YtkCg49?si=k9ukDo1rTqe4w8IAqHY5yw",
+        appleMusic: "https://music.apple.com/es/album/coraz%C3%B3n-single/1563480641",
+        youtubeMusic: "https://music.youtube.com/search?q=Black+Criss+Corazon",
+    },
+    {
+        image: "/images/releases/black-criss-tech-house-bcith8-kore-music.webp",
+        name: "BCITH8",
+        type: "Single",
+        artist: "Black Criss",
+        year: 2020,
+        beatport: "https://www.beatport.com/es/release/bcith8/3095929",
+        spotify: "https://open.spotify.com/intl-es/album/5rLXHi9ayfjBWhhhi7fx7G?si=E6Sx3EEIQb2i-gk8jGU--A",
+        appleMusic: "https://music.apple.com/es/album/bcith8-ep/1528190096",
+        youtubeMusic: "https://music.youtube.com/search?q=Black+Criss+BCITH8",
+    },
+    {
+        image: "/images/releases/black-criss-tech-house-gozadera-kore-music.webp",
+        name: "GOZADERA",
+        type: "EP",
+        artist: "Black Criss",
+        year: 2020,
+        beatport: "https://www.beatport.com/es/release/gozadera/2860323",
+        spotify: "https://open.spotify.com/intl-es/album/7cDcoNBkVT7ER3sA0DMxw0?si=ozQPztOfQfiftr8tKkSIAA",
+        appleMusic: "https://music.apple.com/es/album/gozadera-single/1498884992",
+        youtubeMusic: "https://music.youtube.com/search?q=Black+Criss+Gozadera",
+    },
+    {
+        image: "/images/releases/black-criss-tech-house-shake-ya-kore-music.webp",
+        name: "SHAKE YA REMIX",
+        type: "Remix",
+        artist: "Black Criss",
+        year: 2022,
+        beatport: "https://www.beatport.com/es/track/shake-ya/16885290",
+        spotify: "https://open.spotify.com/intl-es/track/7MUpOyJf1j5ZvzfkIZ2vIX?si=5851abe343d34d94",
+        appleMusic: "https://music.apple.com/es/song/shake-ya-black-criss-gruss-remix/1643024004",
+        youtubeMusic: "https://music.youtube.com/search?q=Black+Criss+Shake+Ya+Remix",
+    },
+];
 ---
 
 <section class="releases-section" id="music">
@@ -14,473 +116,46 @@ import "../releases/releases.css";
 
         <!-- Releases -->
         <div class="releases-scroll" data-releases-scroll>
-            <!-- RELEASE 00 -->
-            <article class="release-card">
-                <img
-                    src="/images/releases/black_criss_tech_house_gahva_quibdo_choco.webp"
-                    alt="The Negritos Vol. 2"
-                    class="release-card-artwork"
-                    loading="lazy"
-                    decoding="async"
-                />
+            {
+                releases.map((release) => (
+                    <article class="release-card">
+                        <img
+                            src={release.image}
+                            alt={release.name}
+                            class="release-card-artwork"
+                            loading="lazy"
+                            decoding="async"
+                        />
 
-                <div class="release-card-content">
-                    <h3>GAHVA</h3>
-                    <div class="release-card-meta">
-                        <span>EP</span>
-                        <span>Black Criss</span>
-                        <span>2026</span>
-                    </div>
+                        <div class="release-card-content">
+                            <h3>{release.name}</h3>
+                            <div class="release-card-meta">
+                                <span>{release.type}</span>
+                                <span>{release.artist}</span>
+                                <span>{release.year}</span>
+                            </div>
 
-                    <div class="release-card-platforms">
-                        <a
-                            href="https://www.beatport.com/release/gahva/7501820"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="The Negritos Vol. 2 en Beatport"
-                        >
-                            <img src="/images/platforms/beatport.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://open.spotify.com/album/37mKECWLzuhP1nycPut3GD?si=kiWrLerUSEeZ4ns2IteSrQ"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="The Negritos Vol. 2 en Spotify"
-                        >
-                            <img src="/images/platforms/spotify.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://music.apple.com/es/album/gahva-single/6814890244"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="The Negritos Vol. 2 en Apple Music"
-                        >
-                            <img
-                                src="/images/platforms/apple-music.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- RELEASE 01 -->
-            <article class="release-card">
-                <img
-                    src="/images/releases/black-criss-tech-house-the-negritos-vol-2-kore-music.webp"
-                    alt="The Negritos Vol. 2"
-                    class="release-card-artwork"
-                    loading="lazy"
-                    decoding="async"
-                />
-
-                <div class="release-card-content">
-                    <h3>THE NEGRITOS VOL. 2</h3>
-                    <div class="release-card-meta">
-                        <span>EP</span>
-                        <span>Black Criss</span>
-                        <span>2026</span>
-                    </div>
-
-                    <div class="release-card-platforms">
-                        <a
-                            href="https://www.beatport.com/es/release/the-negritos-vol2/7240255"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="The Negritos Vol. 2 en Beatport"
-                        >
-                            <img src="/images/platforms/beatport.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://open.spotify.com/intl-es/album/1NA2BL84YGw0gDPH6q3hQL?si=jtW1eIiwTdWr5O_TpMPYUQ"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="The Negritos Vol. 2 en Spotify"
-                        >
-                            <img src="/images/platforms/spotify.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://music.apple.com/es/album/the-negritos-vol-2-ep/6793250401"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="The Negritos Vol. 2 en Apple Music"
-                        >
-                            <img
-                                src="/images/platforms/apple-music.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- RELEASE 02 -->
-            <article class="release-card">
-                <img
-                    src="/images/releases/black-criss-tech-house-bcith13-kore-music.webp"
-                    alt="BCITH13"
-                    class="release-card-artwork"
-                    loading="lazy"
-                    decoding="async"
-                />
-
-                <div class="release-card-content">
-                    <h3>BCITH13</h3>
-                    <div class="release-card-meta">
-                        <span>EP</span>
-                        <span>Black Criss</span>
-                        <span>2025</span>
-                    </div>
-
-                    <div class="release-card-platforms">
-                        <a
-                            href="https://www.beatport.com/es/release/bcith13/5394510"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="BCITH13 en Beatport"
-                        >
-                            <img src="/images/platforms/beatport.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://open.spotify.com/intl-es/album/545ZKIBlx72l0e8CjOdrIP?si=qXnvTNhXS3-Zo9aeJr6o6A"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="BCITH13 en Spotify"
-                        >
-                            <img src="/images/platforms/spotify.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://music.apple.com/es/album/bcith13-ep/1839953454"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="BCITH13 en Apple Music"
-                        >
-                            <img
-                                src="/images/platforms/apple-music.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- RELEASE 03 -->
-            <article class="release-card">
-                <img
-                    src="/images/releases/black-criss-tech-house-yes-is-more-vol-3-kore-music.webp"
-                    alt="Yes Is More Vol. 3"
-                    class="release-card-artwork"
-                    loading="lazy"
-                    decoding="async"
-                />
-
-                <div class="release-card-content">
-                    <h3>YES IS MORE VOL. 3</h3>
-                    <div class="release-card-meta">
-                        <span>EP</span>
-                        <span>Black Criss</span>
-                        <span>2024</span>
-                    </div>
-
-                    <div class="release-card-platforms">
-                        <a
-                            href="https://www.beatport.com/es/release/yes-is-more-vol-3/4467125"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Yes Is More Vol. 3 en Beatport"
-                        >
-                            <img src="/images/platforms/beatport.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://open.spotify.com/intl-es/album/4YVTWtPkzctmeFRrhLEyd1?si=FIGcPanZTPCDPB6c8UDINA"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Yes Is More Vol. 3 en Spotify"
-                        >
-                            <img src="/images/platforms/spotify.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://music.apple.com/es/album/yes-is-more-vol-3-single/1732866775"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Yes Is More Vol. 3 en Apple Music"
-                        >
-                            <img
-                                src="/images/platforms/apple-music.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- RELEASE 04 -->
-            <article class="release-card">
-                <img
-                    src="/images/releases/black-criss-tech-house-bcith9-kore-music.webp"
-                    alt="BCITH9"
-                    class="release-card-artwork"
-                    loading="lazy"
-                    decoding="async"
-                />
-
-                <div class="release-card-content">
-                    <h3>BCITH9</h3>
-                    <div class="release-card-meta">
-                        <span>EP</span>
-                        <span>Black Criss</span>
-                        <span>2021</span>
-                    </div>
-
-                    <div class="release-card-platforms">
-                        <a
-                            href="https://www.beatport.com/es/release/bcith9/3540986"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="BCITH9 en Beatport"
-                        >
-                            <img src="/images/platforms/beatport.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://open.spotify.com/intl-es/album/0CqRugo2n6CANpGEwyr4yG?si=rwcYFfntQ2eLpk1UeTIS5g"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="BCITH9 en Spotify"
-                        >
-                            <img src="/images/platforms/spotify.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://music.apple.com/es/album/bcith9/1589551937"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="BCITH9 en Apple Music"
-                        >
-                            <img
-                                src="/images/platforms/apple-music.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- RELEASE 05 -->
-            <article class="release-card">
-                <img
-                    src="/images/releases/black-criss-tech-house-corazon-maximal-records.webp"
-                    alt="Corazón"
-                    class="release-card-artwork"
-                    loading="lazy"
-                    decoding="async"
-                />
-
-                <div class="release-card-content">
-                    <h3>CORAZÓN</h3>
-                    <div class="release-card-meta">
-                        <span>Single</span>
-                        <span>Black Criss</span>
-                        <span>2021</span>
-                    </div>
-
-                    <div class="release-card-platforms">
-                        <a
-                            href="https://www.beatport.com/es/release/corazon/3367804"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Corazón en Beatport"
-                        >
-                            <img src="/images/platforms/beatport.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://open.spotify.com/intl-es/album/6ykkHKmc6JjGZe3YtkCg49?si=k9ukDo1rTqe4w8IAqHY5yw"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Corazón en Spotify"
-                        >
-                            <img src="/images/platforms/spotify.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://music.apple.com/es/album/coraz%C3%B3n-single/1563480641"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Corazón en Apple Music"
-                        >
-                            <img
-                                src="/images/platforms/apple-music.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- RELEASE 06 -->
-            <article class="release-card">
-                <img
-                    src="/images/releases/black-criss-tech-house-bcith8-kore-music.webp"
-                    alt="BCITH8"
-                    class="release-card-artwork"
-                    loading="lazy"
-                    decoding="async"
-                />
-
-                <div class="release-card-content">
-                    <h3>BCITH8</h3>
-                    <div class="release-card-meta">
-                        <span>Single</span>
-                        <span>Black Criss</span>
-                        <span>2020</span>
-                    </div>
-
-                    <div class="release-card-platforms">
-                        <a
-                            href="https://www.beatport.com/es/release/bcith8/3095929"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="BCITH8 en Beatport"
-                        >
-                            <img src="/images/platforms/beatport.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://open.spotify.com/intl-es/album/5rLXHi9ayfjBWhhhi7fx7G?si=E6Sx3EEIQb2i-gk8jGU--A"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="BCITH8 en Spotify"
-                        >
-                            <img src="/images/platforms/spotify.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://music.apple.com/es/album/bcith8-ep/1528190096"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="BCITH8 en Apple Music"
-                        >
-                            <img
-                                src="/images/platforms/apple-music.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- RELEASE 07 -->
-            <article class="release-card">
-                <img
-                    src="/images/releases/black-criss-tech-house-gozadera-kore-music.webp"
-                    alt="Gozadera"
-                    class="release-card-artwork"
-                    loading="lazy"
-                    decoding="async"
-                />
-
-                <div class="release-card-content">
-                    <h3>GOZADERA</h3>
-                    <div class="release-card-meta">
-                        <span>EP</span>
-                        <span>Black Criss</span>
-                        <span>2020</span>
-                    </div>
-
-                    <div class="release-card-platforms">
-                        <a
-                            href="https://www.beatport.com/es/release/gozadera/2860323"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Gozadera en Beatport"
-                        >
-                            <img src="/images/platforms/beatport.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://open.spotify.com/intl-es/album/7cDcoNBkVT7ER3sA0DMxw0?si=ozQPztOfQfiftr8tKkSIAA"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Gozadera en Spotify"
-                        >
-                            <img src="/images/platforms/spotify.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://music.apple.com/es/album/gozadera-single/1498884992"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Gozadera en Apple Music"
-                        >
-                            <img
-                                src="/images/platforms/apple-music.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- RELEASE 08 -->
-            <article class="release-card">
-                <img
-                    src="/images/releases/black-criss-tech-house-shake-ya-kore-music.webp"
-                    alt="Shake Ya Remix"
-                    class="release-card-artwork"
-                    loading="lazy"
-                    decoding="async"
-                />
-
-                <div class="release-card-content">
-                    <h3>SHAKE YA REMIX</h3>
-                    <div class="release-card-meta">
-                        <span>Remix</span>
-                        <span>Black Criss</span>
-                        <span>2022</span>
-                    </div>
-
-                    <div class="release-card-platforms">
-                        <a
-                            href="https://www.beatport.com/es/track/shake-ya/16885290"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Shake Ya Remix en Beatport"
-                        >
-                            <img src="/images/platforms/beatport.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://open.spotify.com/intl-es/track/7MUpOyJf1j5ZvzfkIZ2vIX?si=5851abe343d34d94"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Shake Ya Remix en Spotify"
-                        >
-                            <img src="/images/platforms/spotify.svg" alt="" />
-                        </a>
-
-                        <a
-                            href="https://music.apple.com/es/song/shake-ya-black-criss-gruss-remix/1643024004"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Shake Ya Remix en Apple Music"
-                        >
-                            <img
-                                src="/images/platforms/apple-music.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                </div>
-            </article>
+                            <div class="release-card-platforms">
+                                {[
+                                    { name: "Beatport", href: release.beatport, icon: "beatport" },
+                                    { name: "Spotify", href: release.spotify, icon: "spotify" },
+                                    { name: "Apple Music", href: release.appleMusic, icon: "apple-music" },
+                                    { name: "YouTube Music", href: release.youtubeMusic, icon: "youtube-music" },
+                                ].map((platform) => (
+                                    <a
+                                        href={platform.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`${release.name} en ${platform.name}`}
+                                    >
+                                        <img src={`/images/platforms/${platform.icon}.svg`} alt="" />
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </article>
+                ))
+            }
         </div>
 
         <!-- Navigation -->
