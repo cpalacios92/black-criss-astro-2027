@@ -1,93 +1,66 @@
 ---
 import "../explore-sections/explore-sections.css";
 
-const currentYear = new Date().getFullYear();
+const sections = [
+    {
+        title: "MÚSICA",
+        link: "/music",
+        buttonText: "EXPLORAR MÚSICA",
+        image: "/images/explore/black-criss-music.png",
+        alt: "Black Criss Música",
+        className: "explore-card-music",
+    },
+    {
+        title: "MERCH",
+        link: "https://shop.blackcriss.com/",
+        buttonText: "VER MERCH",
+        image: "/images/explore/black-criss-merch-bcith.png",
+        alt: "Black Criss Merch",
+        className: "explore-card-merch",
+        target: "_blank",
+    },
+    {
+        title: "IN STUDIO",
+        link: "https://instudio.blackcriss.com/",
+        buttonText: "CONOCER IN STUDIO",
+        image: "/images/explore/black-criss-in-studio.png",
+        alt: "Black Criss In Studio",
+        className: "explore-card-studio",
+        target: "_blank",
+    },
+];
 ---
 
 <section class="explore-sections">
-    <!-- MUSIC -->
-    <article class="explore-card explore-card-music">
-        <div class="explore-card-visual">
-            <img
-                src="/images/explore/black-criss-music.png"
-                width="800"
-                height="800"
-                alt="Black Criss Música"
-                class="explore-card-image"
-                loading="lazy"
-                decoding="async"
-            />
-        </div>
+    {
+        sections.map((section) => (
+            <article class={`explore-card ${section.className}`}>
+                <div class="explore-card-visual">
+                    <img
+                        src={section.image}
+                        width="800"
+                        height="800"
+                        alt={section.alt}
+                        class="explore-card-image"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
 
-        <div class="explore-card-content">
-            <h2 class="explore-card-title">MÚSICA</h2>
+                <div class="explore-card-content">
+                    <h2 class="explore-card-title">{section.title}</h2>
 
-            <a
-                href="/music"
-                class="btn explore-card-btn"
-                rel="noopener noreferrer"
-            >
-                EXPLORAR MÚSICA
-                <span aria-hidden="true">→</span>
-            </a>
-        </div>
-    </article>
-
-    <!-- MERCH -->
-    <article class="explore-card explore-card-merch">
-        <div class="explore-card-visual">
-            <img
-                src="/images/explore/black-criss-merch-bcith.png"
-                width="800"
-                height="800"
-                alt="Black Criss Merch"
-                class="explore-card-image"
-                loading="lazy"
-                decoding="async"
-            />
-        </div>
-
-        <div class="explore-card-content">
-            <h2 class="explore-card-title">MERCH</h2>
-
-            <a
-                href="https://shop.blackcriss.com/"
-                class="btn explore-card-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                VER MERCH
-                <span aria-hidden="true">→</span>
-            </a>
-        </div>
-    </article>
-
-    <!-- IN STUDIO -->
-    <article class="explore-card explore-card-studio">
-        <div class="explore-card-visual">
-            <img
-                src="/images/explore/black-criss-in-studio.png"
-                width="800"
-                height="800"
-                alt="Black Criss In Studio"
-                class="explore-card-image"
-                loading="lazy"
-                decoding="async"
-            />
-        </div>
-
-        <div class="explore-card-content">
-            <h2 class="explore-card-title">IN STUDIO</h2>
-
-            <a
-                href="https://instudio.blackcriss.com/"
-                class="btn explore-card-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                CONOCER IN STUDIO
-                <span aria-hidden="true">→</span>
-            </a>
-        </div>
-    </article>
+                    <a
+                        href={section.link}
+                        class="btn explore-card-btn"
+                        target={section.target}
+                        rel="noopener noreferrer"
+                    >
+                        {section.buttonText}
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+        ))
+    }
 </section>
