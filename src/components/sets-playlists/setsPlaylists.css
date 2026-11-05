@@ -77,11 +77,15 @@
 .music-set-card {
     flex: 0 0 360px;
 
+    display: block;
+
     overflow: hidden;
 
     border: 1px solid rgba(255, 255, 255, 0.12);
 
     background-color: rgba(255, 255, 255, 0.025);
+    color: inherit;
+    text-decoration: none;
 
     scroll-snap-align: start;
 
@@ -94,6 +98,11 @@
     border-color: rgba(255, 255, 255, 0.35);
 
     transform: translateY(-5px);
+}
+
+.music-set-card:focus-visible {
+    outline: 2px solid var(--bc-yellow);
+    outline-offset: 3px;
 }
 
 .music-set-card>img {
@@ -134,7 +143,7 @@
 /* Listen link
 ---------------------------------------------------------- */
 
-.music-set-content a {
+.music-set-listen {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -152,7 +161,7 @@
         transform 0.3s ease;
 }
 
-.music-set-content a:hover {
+.music-set-card:hover .music-set-listen {
     color: var(--bc-yellow);
 }
 
